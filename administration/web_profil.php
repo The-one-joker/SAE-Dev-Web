@@ -15,7 +15,7 @@
                     </a>
         
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="index.html" class="nav-link px-2 text-white">Accueil</a></li>
+                        <li><a href="../index_log.html" class="nav-link px-2 text-white">Accueil</a></li>
                         <li><a href="Playlists/affichage.html" class="nav-link px-2 text-white">Playlist</a></li>
                         <li><a href="Playlists/creation.html" class="nav-link px-2 text-white">Créer playlist</a></li>
                         <li><a href="Playlists/affichage.html" class="nav-link px-2 text-white">Favoris</a></li>
@@ -40,16 +40,16 @@
         </header>
     </head>
     <body>
-        <h1>Profil</h1>
+        <h1>Profil utilisateur</h1>
+        <h1>Liste des utilisateurs</h1>
         <?php
-        include '../profil.php';
+        include '../PHP/profil.php';
         ?>
         <h1>Nouvel utilisateur</h1>
-        <form method='post' action='ajout.php'>
+        <form method='post' action='../PHP/ajout.php'>
             <table class='table' border='1'>
                 <thead>
                     <tr>
-                        <th scope='col'>ID</th>
                         <th scope='col'>Nom</th>
                         <th scope='col'>Prénom</th>
                         <th scope='col'>Mail</th>
@@ -60,12 +60,11 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type='text' class='form-control' placeholder='Identifiant' aria-label='Search'></td>
-                        <td><input type='text' class='form-control' placeholder='Nom' aria-label='Search'></td>
-                        <td><input type='text' class='form-control' placeholder='Prénom' aria-label='Search'></td>
-                        <td><input type='mail' class='form-control' placeholder='Mail' aria-label='Search'></td>
-                        <td><input type='password' class='form-control' placeholder='Mot de passe' aria-label='Search'></td>
-                        <td><select class='form-select' aria-label='Type compte'>
+                        <td><input type='text' class='form-control' placeholder='Nom' aria-label='Search' name="nom"></td>
+                        <td><input type='text' class='form-control' placeholder='Prénom' aria-label='Search' name="prenom"></td>
+                        <td><input type='mail' class='form-control' placeholder='Mail' aria-label='Search' name="mail"></td>
+                        <td><input type='password' class='form-control' placeholder='Mot de passe' aria-label='Search' name="mdp"></td>
+                        <td><select class='form-select' aria-label='Type compte' name="type">
                         <option selected>Type de compte</option>
                         <option value='Admin'>Administrateur</option>
                         <option value='User'>Utilisateur</option>
@@ -77,7 +76,7 @@
         </form>
         <h1>Supprimer un utilisateur</h1>
         <?php
-        include '../suppression.php';
+        include '../PHP/suppression.php';
         ?>
     </body>
 </html>

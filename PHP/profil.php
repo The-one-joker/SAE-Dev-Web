@@ -1,17 +1,5 @@
 <?php
-    // Configuration de la base de données
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "rythmix";
-
-    // Connexion à la base de données
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Vérifier la connexion
-    if ($conn->connect_error) {
-        die("La connexion a échoué: " . $conn->connect_error);
-    }
+    include 'connect.php';
 
     // Requête SQL pour sélectionner tous les utilisateurs
     $sql = "SELECT USER_ID, Nom, Prenom, Mail, Mdp, Type FROM Utilisateurs";
@@ -19,7 +7,6 @@
 
     if ($result->num_rows > 0) {
         // Début du tableau HTML
-        echo "<h1>Liste des utilisateurs</h1>";
         echo "<table class='table' border='1'>
                 <thead>
                     <tr>
