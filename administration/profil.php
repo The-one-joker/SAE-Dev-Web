@@ -44,5 +44,40 @@
         <?php
         include '../profil.php';
         ?>
+        <h1>Nouvel utilisateur</h1>
+        <form method='post' action='ajout.php'>
+            <table class='table' border='1'>
+                <thead>
+                    <tr>
+                        <th scope='col'>ID</th>
+                        <th scope='col'>Nom</th>
+                        <th scope='col'>Prénom</th>
+                        <th scope='col'>Mail</th>
+                        <th scope='col'>Mot de passe</th>
+                        <th scope='col'>Type</th>
+                        <th scope='col'></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type='text' class='form-control' placeholder='Identifiant' aria-label='Search'></td>
+                        <td><input type='text' class='form-control' placeholder='Nom' aria-label='Search'></td>
+                        <td><input type='text' class='form-control' placeholder='Prénom' aria-label='Search'></td>
+                        <td><input type='mail' class='form-control' placeholder='Mail' aria-label='Search'></td>
+                        <td><input type='password' class='form-control' placeholder='Mot de passe' aria-label='Search'></td>
+                        <td><select class='form-select' aria-label='Type compte'>
+                        <option selected>Type de compte</option>
+                        <option value='Admin'>Administrateur</option>
+                        <option value='User'>Utilisateur</option>
+                        </select></td>
+                        <td><button type='submit' class='btn btn-primary'>Ajouter</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <h1>Supprimer un utilisateur</h1>
+        <?php
+        include '../suppression.php';
+        ?>
     </body>
 </html>

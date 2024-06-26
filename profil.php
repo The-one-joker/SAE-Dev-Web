@@ -19,6 +19,7 @@
 
     if ($result->num_rows > 0) {
         // Début du tableau HTML
+        echo "<h1>Liste des utilisateurs</h1>";
         echo "<table class='table' border='1'>
                 <thead>
                     <tr>
