@@ -15,10 +15,10 @@
                     </a>
         
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="../index_log.html" class="nav-link px-2 text-white">Accueil</a></li>
-                        <li><a href="Playlists/affichage.html" class="nav-link px-2 text-white">Playlist</a></li>
-                        <li><a href="Playlists/creation.html" class="nav-link px-2 text-white">Créer playlist</a></li>
-                        <li><a href="Playlists/affichage.html" class="nav-link px-2 text-white">Favoris</a></li>
+                        <li><a href="../index_log.php" class="nav-link px-2 text-white">Accueil</a></li>
+                        <li><a href="Playlists/affichage.php" class="nav-link px-2 text-white">Playlist</a></li>
+                        <li><a href="Playlists/creation.php" class="nav-link px-2 text-white">Créer playlist</a></li>
+                        <li><a href="Playlists/affichage.php" class="nav-link px-2 text-white">Favoris</a></li>
                     </ul>
         
                     <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -27,7 +27,7 @@
         
                     <div class="dropdown text-end">
                         <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                        <img src="../images/avatars/<?php include 'affichage_pp.php'?>" alt="mdo" width="32" height="32" class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu text-small">
                             <li><a class="dropdown-item" href="/administration/profil.html">Profil</a></li>
@@ -66,7 +66,7 @@
                     <tr>
                         <td><h>Votre nom :</h></td>
                         <td><input type='text' class='form-control' value="<?php echo $Nom; ?>" aria-label='Search' name='nom_modif'></td>
-                        <td rowspan="5"><?php include 'affichage_pp.php' ?></td>
+                        <td rowspan="5"><img src="../images/avatars/<?php include 'affichage_pp.php'?>" alt='Avatar' style='width: 250px; height: 250px; border-radius: 50%'></td>
                     </tr>
                     <tr>
                         <td><h>Votre prénom :</h></td>
