@@ -11,19 +11,21 @@
 <body>
     <div class="login-box">
         <div class="login-header">
-            <header>Login</header>
+            <header>login</header>
+        </div>
+        <form action="login.php" method="post">
+        <div class="input-box">
+            <input type="login" class="input-field" name="login" placeholder="Email" autocomplete="off" required>
         </div>
         <div class="input-box">
-            <input type="text" class="input-field" placeholder="Email" autocomplete="off" required>
-        </div>
-        <div class="input-box">
-            <input type="password" class="input-field" placeholder="Password" autocomplete="off" required>
+            <input type="password" class="input-field" name="password" placeholder="Password" autocomplete="off" required>
         </div>
     
         <div class="input-submit">
             <button class="submit-btn" id="submit"></button>
             <label for="submit">Login</label>
         </div>
+        </form>
         <div class="sign-up-link">
             <p>Don't have account? <a href="signup.html">Sign Up</a></p>
         </div>
