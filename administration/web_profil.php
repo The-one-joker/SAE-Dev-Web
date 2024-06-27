@@ -40,6 +40,19 @@
         </header>
     </head>
     <body>
+
+        <?php // Petit script pour récupérer les informations de l'utilisateur depuis la BDD et non les cookies pour éviter les problèmes de synchronisation
+            include '../PHP/connect.php';
+
+            $sql = "SELECT Nom, Prenom, Mail FROM Utilisateurs WHERE USER_ID = " . $_COOKIE['ID'];
+
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+            $Nom = $row['Nom'];
+            $Prenom = $row['Prenom'];
+            $Mail = $row['Mail'];
+        ?>
+
         <h1>Profil utilisateur</h1>
         <form method='post' action='modification_user.php' enctype="multipart/form-data">
             <table class='table table-borderless' border=1>
@@ -52,16 +65,16 @@
                 <tbody>
                     <tr>
                         <td><h>Votre nom :</h></td>
-                        <td><input type='text' class='form-control' value="<?php echo $_COOKIE['Nom']; ?>" aria-label='Search' name='nom_modif'></td>
+                        <td><input type='text' class='form-control' value="<?php echo $Nom; ?>" aria-label='Search' name='nom_modif'></td>
                         <td rowspan="5"><?php include 'affichage_pp.php' ?></td>
                     </tr>
                     <tr>
                         <td><h>Votre prénom :</h></td>
-                        <td><input type='text' class='form-control' value="<?php echo $_COOKIE['prenom']; ?>" aria-label='Search' name='prenom_modif'></td>
+                        <td><input type='text' class='form-control' value="<?php echo $Prenom; ?>" aria-label='Search' name='prenom_modif'></td>
                     </tr>
                     <tr>
                         <td><h>Votre mail :</h></td>
-                        <td><input type='mail' class='form-control' value="<?php echo $_COOKIE['mail']; ?>" aria-label='Search' name='mail_modif'></td>
+                        <td><input type='mail' class='form-control' value="<?php echo $Mail; ?>" aria-label='Search' name='mail_modif'></td>
                     </tr>
                     <tr>
                         <td><h>Nouveau mot de passe :</h></td>
