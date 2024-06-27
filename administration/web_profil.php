@@ -53,6 +53,7 @@
                     <tr>
                         <td><h>Votre nom :</h></td>
                         <td><input type='text' class='form-control' value="<?php echo $_COOKIE['Nom']; ?>" aria-label='Search' name='nom_modif'></td>
+                        <td rowspan="5"><?php include 'affichage_pp.php' ?></td>
                     </tr>
                     <tr>
                         <td><h>Votre prénom :</h></td>
