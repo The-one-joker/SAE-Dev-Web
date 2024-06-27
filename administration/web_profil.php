@@ -41,95 +41,40 @@
     </head>
     <body>
         <h1>Profil utilisateur</h1>
-        <h1>Liste des utilisateurs</h1>
-        <?php
-        include '../PHP/profil.php';
-        ?>
-        <h1>Nouvel utilisateur</h1>
-        <form method='post' action='../PHP/ajout.php'>
-            <table class='table' border='1'>
-                <thead>
-                    <tr>
-                        <th scope='col'>Nom</th>
-                        <th scope='col'>Prénom</th>
-                        <th scope='col'>Mail</th>
-                        <th scope='col'>Mot de passe</th>
-                        <th scope='col'>Type</th>
-                        <th scope='col'></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type='text' class='form-control' placeholder='Nom' aria-label='Search' name="nom"></td>
-                        <td><input type='text' class='form-control' placeholder='Prénom' aria-label='Search' name="prenom"></td>
-                        <td><input type='mail' class='form-control' placeholder='Mail' aria-label='Search' name="mail"></td>
-                        <td><input type='password' class='form-control' placeholder='Mot de passe' aria-label='Search' name="mdp"></td>
-                        <td><select class='form-select' aria-label='Type compte' name="type">
-                        <option value='User'>Utilisateur</option>
-                        <option value='Admin'>Administrateur</option>
-                        </select></td>
-                        <td><button type='submit' class='btn btn-primary'>Ajouter</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
-        <h1>Supprimer un utilisateur</h1>
-        <?php
-        include '../PHP/dropdown.php';
-        ?>
-        <h1>Modifier un utilisateur</h1>
-        <form method='post' action='../PHP/modification.php'>
-            <table class='table' border='1'>
-                <thead>
-                    <tr>
-                        <th scope='col'>ID</th>
-                        <th scope='col'>Nom</th>
-                        <th scope='col'>Prénom</th>
-                        <th scope='col'>Mail</th>
-                        <th scope='col'>Mot de passe</th>
-                        <th scope='col'>Type</th>
-                        <th scope='col'></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type='text' class='form-control' placeholder="ID de l'utilisateur" aria-label='Search' name="id_modif"></td>
-                        <td><input type='text' class='form-control' placeholder='Nom' aria-label='Search' name="nom_modif"></td>
-                        <td><input type='text' class='form-control' placeholder='Prénom' aria-label='Search' name="prenom_modif"></td>
-                        <td><input type='mail' class='form-control' placeholder='Mail' aria-label='Search' name="mail_modif"></td>
-                        <td><input type='password' class='form-control' placeholder='Mot de passe' aria-label='Search' name="mdp_modif"></td>
-                        <td><select class='form-select' aria-label='Type compte' name="type_modif">
-                        <option selected>Type de compte</option>
-                        <option value='Admin'>Administrateur</option>
-                        <option value='User'>Utilisateur</option>
-                        </select></td>
-                        <td><button type='submit' placeholder='Mot de passe' class='btn btn-primary'>Modifier</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
-        <h1>Modifier ses informations</h1>
         <form method='post' action='modification_user.php'>
-            <table class='table' border='1'>
+            <table class='table table-borderless' border=1>
                 <thead>
                     <tr>
-                        <th scope='col'>Nom</th>
-                        <th scope='col'>Prénom</th>
-                        <th scope='col'>Mail</th>
-                        <th scope='col'>Mot de passe</th>
-                        <th scope='col'></th>
+                        <th style="width:10%" scope='col'></th>
+                        <th style="width:50%"scope='col'></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <td><h>Votre nom :</h></td>
                         <td><input type='text' class='form-control' value="<?php echo $_COOKIE['Nom']; ?>" aria-label='Search' name='nom_modif'></td>
+                    </tr>
+                    <tr>
+                        <td><h>Votre prénom :</h></td>
                         <td><input type='text' class='form-control' value="<?php echo $_COOKIE['prenom']; ?>" aria-label='Search' name='prenom_modif'></td>
+                    </tr>
+                    <tr>
+                        <td><h>Votre mail :</h></td>
                         <td><input type='mail' class='form-control' value="<?php echo $_COOKIE['mail']; ?>" aria-label='Search' name='mail_modif'></td>
+                    </tr>
+                    <tr>
+                        <td><h>Votre mot de passe :</h></td>
                         <td><input type='password' class='form-control' placeholder='Mot de passe' aria-label='Search' name='mdp_modif'></td>
-                        <td><button type='submit' class='btn btn-primary'>Modifier</button></td>
+                    </tr>
+                    <tr>
+                        <td><h></h></td>
+                        <td><button type='submit' class='btn btn-primary'>Sauvegarder</button></td>
                     </tr>
                 </tbody>
             </table>
         </form>
+        <?php
+            include 'affichage_admin.php';
+        ?>
     </body>
 </html>
