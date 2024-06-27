@@ -65,9 +65,8 @@
                         <td><input type='mail' class='form-control' placeholder='Mail' aria-label='Search' name="mail"></td>
                         <td><input type='password' class='form-control' placeholder='Mot de passe' aria-label='Search' name="mdp"></td>
                         <td><select class='form-select' aria-label='Type compte' name="type">
-                        <option selected>Type de compte</option>
-                        <option value='Admin'>Administrateur</option>
                         <option value='User'>Utilisateur</option>
+                        <option value='Admin'>Administrateur</option>
                         </select></td>
                         <td><button type='submit' class='btn btn-primary'>Ajouter</button></td>
                     </tr>

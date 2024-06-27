@@ -3,19 +3,7 @@ session_start();
 
 echo "Début du script d'inscription<br>";
 
-// Paramètres de connexion à la base de données
-$host = 'localhost';
-$user = 'root';
-$password = 'root';
-$database = 'Rythmix';
-
-// Connexion à la base de données avec mysqli_connect
-$conn = mysqli_connect($host, $user, $password, $database);
-
-// Vérifier la connexion
-if (!$conn) {
-    die("La connexion a échoué : " . mysqli_connect_error());
-}
+include '../PHP/connect.php';
 
 // Vérifier si le formulaire a été soumis et que les champs ne sont pas vides
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

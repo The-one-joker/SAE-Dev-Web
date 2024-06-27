@@ -3,19 +3,7 @@ session_start();
 
 echo "Début du script<br>";
 
-// Paramètres de connexion à la base de données
-$host = 'localhost';
-$user = 'root';
-$password = 'root';
-$database = 'Rythmix';
-
-// Connexion à la base de données avec mysqli_connect
-$conn = mysqli_connect($host, $user, $password, $database);
-
-// Vérifier la connexion
-if (!$conn) {
-    die("La connexion a échoué : " . mysqli_connect_error());
-}
+include '../PHP/connect.php';
 
 $loginOK = false;
 
@@ -46,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     echo "Connexion réussie !<br>";
                     if ($_SESSION['Type'] == 'Admin') {
                         echo "ejpoficjoirsfdv";
-                        header('Location: index.html');
+                        header('Location: ../index.html');
                         exit;
                     }
                     
