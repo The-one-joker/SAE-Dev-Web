@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     
 
                     if ($_SESSION['Type'] == 'Admin') {
-                        echo "ejpoficjoirsfdv";
+                        
                         header('Location: ../index.html');
                         exit;
                     }
