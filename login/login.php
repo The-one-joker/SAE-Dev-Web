@@ -25,14 +25,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // On vérifie que son mot de passe est correct
                 if ($password == $data['Mdp']) {
                     $loginOK = true;
-                    $_SESSION['USER_ID'] = $data['USER_ID'];
-                    $_SESSION['Type'] = $data['Type'];
-                    $_SESSION['Nom'] = $data['Nom'];
-                    $_SESSION['prenom'] = $data['Prenom'];
-                    echo "UserId : " . $_SESSION['USER_ID'] . " <br>";
-                    echo "Type Account : " . $_SESSION['Type'] . " <br>";
-                    echo "Name : " . $_SESSION['Nom'] . " <br>";
-                    echo "Connexion réussie !<br>";
+                    setcookie('ID', $data['USER_ID'], time() + (86400 * 30), "/");
+                    setcookie('Type', $data['Type'], time() + (86400 * 30), "/");
+                    setcookie('Nom', $data['Nom'], time() + (86400 * 30), "/");
+                    setcookie('prenom', $data['Prenom'], time() + (86400 * 30), "/");
+                    //echo "UserId : " . $_SESSION['USER_ID'] . " <br>";
+                    //echo "Type Account : " . $_SESSION['Type'] . " <br>";
+                    //echo "Name : " . $_SESSION['Nom'] . " <br>";
+                    //echo "Connexion réussie !<br>";
+
+                    echo "UserID: " . $_COOKIE['ID'] . "<br>";
+                    echo "Type Account: " . $_COOKIE['Type'] . "<br>";
+                    echo "Name: " . $_COOKIE['Nom'] . "<br>";
+                    echo "First Name: " . $_COOKIE['prenom'] . "<br>";
+                    
+
                     if ($_SESSION['Type'] == 'Admin') {
                         echo "ejpoficjoirsfdv";
                         header('Location: ../index.html');
@@ -54,9 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 } else {
     echo "Formulaire non soumis.<br>";
-}
-
-
+} 
 
 
 // Fermer la connexion à la base de données

@@ -78,7 +78,6 @@
         include '../PHP/dropdown.php';
         ?>
         <h1>Modifier un utilisateur</h1>
-        <h>Entrez l'ID de l'utilisateur à modifier : </h>
         <form method='post' action='../PHP/modification.php'>
             <table class='table' border='1'>
                 <thead>
@@ -104,9 +103,14 @@
                         <option value='Admin'>Administrateur</option>
                         <option value='User'>Utilisateur</option>
                         </select></td>
-                        <td><button type='submit' class='btn btn-primary'>Modifier</button></td>
+                        <td><button type='submit' placeholder='Mot de passe' class='btn btn-primary'>Modifier</button></td>
                     </tr>
                 </tbody>
             </table>
+        </form>
+        <h1>Modifier ses informations</h1>
+        <?php
+        include 'modification_user.php';
+        ?>
     </body>
 </html>
