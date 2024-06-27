@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     setcookie('Type', $data['Type'], time() + (86400 * 30), "/");
                     setcookie('Nom', $data['Nom'], time() + (86400 * 30), "/");
                     setcookie('prenom', $data['Prenom'], time() + (86400 * 30), "/");
+                    setcookie('mail', $data['Mail'], time() + (86400 * 30), "/");
                     //echo "UserId : " . $_SESSION['USER_ID'] . " <br>";
                     //echo "Type Account : " . $_SESSION['Type'] . " <br>";
                     //echo "Name : " . $_SESSION['Nom'] . " <br>";

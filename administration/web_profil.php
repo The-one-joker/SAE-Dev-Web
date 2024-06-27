@@ -109,8 +109,27 @@
             </table>
         </form>
         <h1>Modifier ses informations</h1>
-        <?php
-        include 'modification_user.php';
-        ?>
+        <form method='post' action='modification_user.php'>
+            <table class='table' border='1'>
+                <thead>
+                    <tr>
+                        <th scope='col'>Nom</th>
+                        <th scope='col'>Prénom</th>
+                        <th scope='col'>Mail</th>
+                        <th scope='col'>Mot de passe</th>
+                        <th scope='col'></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type='text' class='form-control' value="<?php echo $_COOKIE['Nom']; ?>" aria-label='Search' name='nom_modif'></td>
+                        <td><input type='text' class='form-control' value="<?php echo $_COOKIE['prenom']; ?>" aria-label='Search' name='prenom_modif'></td>
+                        <td><input type='mail' class='form-control' value="<?php echo $_COOKIE['mail']; ?>" aria-label='Search' name='mail_modif'></td>
+                        <td><input type='password' class='form-control' placeholder='Mot de passe' aria-label='Search' name='mdp_modif'></td>
+                        <td><button type='submit' class='btn btn-primary'>Modifier</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
     </body>
 </html>
