@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['USER_ID'] = $data['USER_ID'];
                     $_SESSION['Type'] = $data['Type'];
                     $_SESSION['Nom'] = $data['Nom'];
+                    $_SESSION['prenom'] = $data['Prenom'];
                     echo "UserId : " . $_SESSION['USER_ID'] . " <br>";
                     echo "Type Account : " . $_SESSION['Type'] . " <br>";
                     echo "Name : " . $_SESSION['Nom'] . " <br>";
