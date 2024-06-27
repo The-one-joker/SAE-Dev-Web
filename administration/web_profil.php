@@ -41,7 +41,7 @@
     </head>
     <body>
         <h1>Profil utilisateur</h1>
-        <form method='post' action='modification_user.php'>
+        <form method='post' action='modification_user.php' enctype="multipart/form-data">
             <table class='table table-borderless' border=1>
                 <thead>
                     <tr>
@@ -63,8 +63,12 @@
                         <td><input type='mail' class='form-control' value="<?php echo $_COOKIE['mail']; ?>" aria-label='Search' name='mail_modif'></td>
                     </tr>
                     <tr>
-                        <td><h>Votre mot de passe :</h></td>
+                        <td><h>Nouveau mot de passe :</h></td>
                         <td><input type='password' class='form-control' placeholder='Mot de passe' aria-label='Search' name='mdp_modif'></td>
+                    </tr>
+                    <tr>
+                        <td><h>Choisissez votre photo de profil : </h></td>
+                        <td><input class="form-control" type="file" name="pp"></td>
                     </tr>
                     <tr>
                         <td><h></h></td>
