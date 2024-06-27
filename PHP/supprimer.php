@@ -1,7 +1,6 @@
 <?php 
     include 'connect.php';
 
-
     $sql = "DELETE FROM Utilisateurs WHERE USER_ID =" . $_POST['select'];
     $result = $conn->query($sql);
 
