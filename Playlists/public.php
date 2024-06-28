@@ -5,17 +5,20 @@ include '../PHP/connect.php';
 // Utilisateur actuellement connecté (exemple avec une session)
 $current_user_id = '1'; // Exemple, à remplacer par la méthode d'authentification appropriée
 
-// Requête SQL pour récupérer les playlists de l'utilisateur pour un album spécifique
-$sql = "SELECT partage, PLAYLIST_Nom FROM Playlists WHERE partage ='1' "; // Suppression du point-virgule dans la chaîne
+// Requête SQL pour récupérer les playlists partagées
+$sql = "SELECT PLAYLIST_ID, partage, PLAYLIST_Nom FROM Playlists WHERE partage = '1'";
 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo '<div class="playlist-item" > <a href="/Playlists/playform.php"> ' . htmlspecialchars($row['PLAYLIST_Nom']) . ' </a> </div>';
+        // Affichage du nom de la playlist avec l'ID dans l'attribut data et le lien vers la page
+        echo '<div class="playlist-item" data-playlist-id="' . $row['PLAYLIST_ID'] . '">
+                <a href="/SAE-Dev-Web/Playlists/playform.php?playlist_id=' . $row['PLAYLIST_ID'] . '">' . htmlspecialchars($row['PLAYLIST_Nom']) . '</a>
+            </div>';
     }
 } else {
-    echo "Playlist Publiques non dispo";
+    echo "Playlists publiques non disponibles";
 }
 
 // Fermer la connexion à la base de données
