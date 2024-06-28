@@ -45,11 +45,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if ($_COOKIE ['Type'] == 'Admin') {
                         header('Location: ../administration/web_profil.php');
                         exit;
+                    } else {
+                        header('Location: ../accueil/index.php');
                     }
                     
                 } else {
                     echo "Mot de passe incorrect.<br>";
-                    header('Location: login.html');
+                    header('Location: ../accueil/index.php');
                 }
             } else {
                 echo "Nom d'utilisateur non trouvé.<br>";
