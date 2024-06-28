@@ -1,16 +1,14 @@
 <?php
 
-
-
 // Création de la connexion
-include '../index.php';
+include '../PHP/connect.php';
 
 // Utilisateur actuellement connecté (exemple avec une session)
 $current_user_id = '1';
 
 // Requête SQL pour récupérer les albums favoris de l'utilisateur
 $sql = "SELECT Albums.ALBUM_ID, Albums.Titre_Album, Albums.Annee_Album, 
-        Albums.Anectdote, Albums.Nombre_titres, Albums.Categorie_ID,
+        Albums.Annecdote, Albums.Nombre_titres, Albums.Categorie_ID,
         Categorie.Categorie, Albums.ARTISTE_ID, Artistes.ARTISTE_Nom, 
         Artistes.ARTISTE_Prenom 
         FROM Favoris 
@@ -30,7 +28,7 @@ if ($result->num_rows > 0) {
         $album_id = $row["ALBUM_ID"];
         $titre_album = $row["Titre_Album"];
         $annee_album = $row["Annee_Album"];
-        $anecdote = $row["Anectdote"];
+        $anecdote = $row["Annecdote"];
         $nombre_titres = $row["Nombre_titres"];
         $categorie_id = $row["Categorie_ID"];
         $categorie = $row["Categorie"];

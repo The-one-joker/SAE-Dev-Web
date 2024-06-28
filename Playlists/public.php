@@ -1,6 +1,6 @@
 <?php
 // Inclure le fichier de connexion à la base de données
-include '../index.php';
+include '../PHP/connect.php';
 
 // Utilisateur actuellement connecté (exemple avec une session)
 $current_user_id = '1'; // Exemple, à remplacer par la méthode d'authentification appropriée
