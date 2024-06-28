@@ -5,17 +5,26 @@
         
         $sql = "INSERT INTO playlists (PLAYLIST_Nom, Partage) VALUES ('" . $_POST['nom_playlist'] . "', '" . $_POST['partager'] . "')";
 
+        $sql_playlist = "SELECT MAX(PLAYLIST_ID) FROM playlists";
+        $result_playlist = $conn->query($sql_playlist);
+        $row_playlist = $result_playlist->fetch_assoc();
+
+        $sql2 = "INSERT INTO a_cree (USER_ID, PLAYLIST_ID) VALUES (" . $_COOKIE['ID'] ."," . $row_playlist['MAX(PLAYLIST_ID)'] . ")";
+        echo $sql2;
         if ($conn->query($sql) === TRUE) { // Vérifie si la requête d'insertion a réussi
-            echo "Nouvel playlist ajouté avec succès";
+            echo "Nouvel playlist créée avec succès";
+            if ($conn->query($sql2) === TRUE) {
+                echo "<br>Relation créateur-playlist ajoutée avec succès";
+            } else {
+                echo "Erreur: " . $sql2 . "<br>" . $conn->error;
+            }
         } else {
             echo "Erreur: " . $sql . "<br>" . $conn->error; // Affiche l'erreur en cas d'échec de la requête
         }
 
         if (isset($_FILES['pochette_play']['name']) AND !empty($_FILES['pochette_play']['name'])) {
             // Récupération de l'ID du dernier album ajouté
-            $sql_playlist = "SELECT MAX(PLAYLIST_ID) FROM playlists";
-            $result_playlist = $conn->query($sql_playlist);
-            $row_playlist = $result_playlist->fetch_assoc();
+            
     
             $img_name3 = $_FILES['pochette_play']['name'];
             $tmp_name3 = $_FILES['pochette_play']['tmp_name'];
