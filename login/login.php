@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     
                 } else {
                     echo "Mot de passe incorrect.<br>";
-                    header('Location: ../accueil/index_nolog.html');
+    
                 }
             } else {
                 echo "Nom d'utilisateur non trouvé.<br>";
