@@ -4,7 +4,8 @@
 
     $sql = "SELECT Avatar FROM Utilisateurs WHERE USER_ID = " . $_COOKIE['ID'];
     $result = $conn->query($sql);
-    echo "<img src='../images/avatars/" . $result->fetch_assoc()['Avatar'] . "' alt='Avatar' style='width: 100px; height: 100px; border-radius: 50%;'>";
+    echo $result->fetch_assoc()['Avatar'];
+    //echo "<img src='../images/avatars/" . $result->fetch_assoc()['Avatar'] . "' alt='Avatar' style='width: 250px; height: 250px; border-radius: 50%;'>";
 
     
 ?>
