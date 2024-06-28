@@ -15,7 +15,7 @@
                     </a>
         
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="../index_log.php" class="nav-link px-2 text-white">Accueil</a></li>
+                        <li><a href="../accueil/index.php" class="nav-link px-2 text-white">Accueil</a></li>
                         <li><a href="Playlists/affichage.php" class="nav-link px-2 text-white">Playlist</a></li>
                         <li><a href="Playlists/creation.php" class="nav-link px-2 text-white">Créer playlist</a></li>
                         <li><a href="Playlists/affichage.php" class="nav-link px-2 text-white">Favoris</a></li>

@@ -34,7 +34,7 @@
                         <img src="../images/avatars/<?php include '../PHP/affichage_pp.php'?>" alt="mdo" width="32" height="32" class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu text-small">
-                            <li><a class="dropdown-item" href="administration/web_profil.php">Profil</a></li>
+                            <li><a class="dropdown-item" href="../administration/web_profil.php">Profil</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="index.html">Se déconnecter</a></li>
                         </ul>
@@ -60,27 +60,26 @@
             </div>
             <button type="submit" class="btn btn-primary">Créer</button>
         </form>
-        <select class="form-select" id="multiple-select-clear-field" data-placeholder="Choose anything" multiple>
-                <option>Christmas Island</option>
-                <option>South Sudan</option>
-                <option>Jamaica</option>
-                <option>Kenya</option>
-                <option>French Guiana</option>
-                <option>Mayotta</option>
-                <option>Liechtenstein</option>
-                <option>Denmark</option>
-                <option>Eritrea</option>
-                <option>Gibraltar</option>
-                <option>Saint Helena, Ascension and Tristan da Cunha</option>
-                <option>Haiti</option>
-                <option>Namibia</option>
-                <option>South Georgia and the South Sandwich Islands</option>
-                <option>Vietnam</option>
-                <option>Yemen</option>
-                <option>Philippines</option>
-                <option>Benin</option>
-                <option>Czech Republic</option>
-                <option>Russia</option>
-            </select>
+        <?php
+        include '../PHP/connect.php';
+
+        // Fetch the titles from the database
+        $sql = "SELECT titre FROM playlists";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // Output the titles as options in the select element
+            echo '<select class="form-select" id="multiple-select-clear-field" data-placeholder="Choose anything" multiple>';
+            while ($row = $result->fetch_assoc()) {
+                echo '<option>' . $row["title"] . '</option>';
+            }
+            echo '</select>';
+        } else {
+            echo "No titles found in the database.";
+        }
+
+        // Close the database connection
+        $conn->close();
+        ?>
     </body>
 </html>
