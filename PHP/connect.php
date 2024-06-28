@@ -3,7 +3,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "root";
-    $dbname = "rythmix";
+    $dbname = "Rythmix";
 
     // Connexion à la base de données
     $conn = new mysqli($servername, $username, $password, $dbname);
