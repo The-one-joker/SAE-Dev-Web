@@ -3,10 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Accueil</title>
+        <title>Créer une playlist</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+        
+        <script src="multiple_select.js"></script>
+        
+        
         <!-- Ajoutez ici les liens vers les fichiers CSS et JavaScript nécessaires -->
         <header class="p-3 mb-3 border-bottom text-bg-dark">
             <div class="container">
@@ -28,7 +31,7 @@
         
                     <div class="dropdown text-end">
                         <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="" alt="mdo" width="32" height="32" class="rounded-circle">
+                        <img src="../images/avatars/<?php include '../PHP/affichage_pp.php'?>" alt="mdo" width="32" height="32" class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu text-small">
                             <li><a class="dropdown-item" href="administration/web_profil.php">Profil</a></li>
@@ -42,8 +45,42 @@
     </head>
 
     <body>
-        <h1>Titres récents</h1>
-        <h1>Albums Favoris</h1>
-        <h1>Playlist Publiques</h1>
+        <form action="../creation_play.php" method="post">
+            <div class="mb-3">
+                <label for="nom" class="form-label">Nom de la playlist</label>
+                <input type="text" class="form-control" id="nom" name="nom">
+            </div>
+            
+            <div class="mb-3">
+                <label for="partager" class="form-label">Partager la playlist ?</label>
+                <select class="form-select" id="partager" name="partager">
+                    <option value="1">Oui</option>
+                    <option value="0">Non</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Créer</button>
+        </form>
+        <select class="form-select" id="multiple-select-clear-field" data-placeholder="Choose anything" multiple>
+                <option>Christmas Island</option>
+                <option>South Sudan</option>
+                <option>Jamaica</option>
+                <option>Kenya</option>
+                <option>French Guiana</option>
+                <option>Mayotta</option>
+                <option>Liechtenstein</option>
+                <option>Denmark</option>
+                <option>Eritrea</option>
+                <option>Gibraltar</option>
+                <option>Saint Helena, Ascension and Tristan da Cunha</option>
+                <option>Haiti</option>
+                <option>Namibia</option>
+                <option>South Georgia and the South Sandwich Islands</option>
+                <option>Vietnam</option>
+                <option>Yemen</option>
+                <option>Philippines</option>
+                <option>Benin</option>
+                <option>Czech Republic</option>
+                <option>Russia</option>
+            </select>
     </body>
 </html>

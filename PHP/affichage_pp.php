@@ -1,6 +1,6 @@
 <?php
 
-    include '../PHP/connect.php'; // Inclusion du fichier connect.php
+    include 'connect.php'; // Inclusion du fichier connect.php
 
     $sql = "SELECT Avatar FROM Utilisateurs WHERE USER_ID = " . $_COOKIE['ID'];
     $result = $conn->query($sql);

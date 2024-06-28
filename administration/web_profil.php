@@ -27,7 +27,7 @@
         
                     <div class="dropdown text-end">
                         <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../images/avatars/<?php include 'affichage_pp.php'?>" alt="mdo" width="32" height="32" class="rounded-circle">
+                        <img src="../images/avatars/<?php include '../PHP/affichage_pp.php'?>" alt="mdo" width="32" height="32" class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu text-small">
                             <li><a class="dropdown-item" href="/administration/profil.html">Profil</a></li>
@@ -40,7 +40,6 @@
         </header>
     </head>
     <body>
-
         <?php // Petit script pour récupérer les informations de l'utilisateur depuis la BDD et non les cookies pour éviter les problèmes de synchronisation
             include '../PHP/connect.php';
 
@@ -52,7 +51,7 @@
             $Prenom = $row['Prenom'];
             $Mail = $row['Mail'];
         ?>
-
+        
         <h1>Profil utilisateur</h1>
         <form method='post' action='modification_user.php' enctype="multipart/form-data">
             <table class='table table-borderless' border=1>
@@ -66,7 +65,7 @@
                     <tr>
                         <td><h>Votre nom :</h></td>
                         <td><input type='text' class='form-control' value="<?php echo $Nom; ?>" aria-label='Search' name='nom_modif'></td>
-                        <td rowspan="5"><img src="../images/avatars/<?php include 'affichage_pp.php'?>" alt='Avatar' style='width: 250px; height: 250px; border-radius: 50%'></td>
+                        <td rowspan="5"><img src="../images/avatars/<?php include '../PHP/affichage_pp.php'?>" alt='Avatar' style='width: 250px; height: 250px; border-radius: 50%'></td>
                     </tr>
                     <tr>
                         <td><h>Votre prénom :</h></td>
