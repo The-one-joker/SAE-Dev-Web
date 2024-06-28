@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     if ($_SESSION['Type'] == 'Admin') {
                         
-                        header('Location: ../index.html');
+                        header('Location: ../administration/web_profil.php');
                         exit;
                     }
                     
