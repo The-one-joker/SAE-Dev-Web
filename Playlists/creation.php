@@ -19,9 +19,9 @@
                     </a>
         
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="index_log.html" class="nav-link px-2 text-white">Accueil</a></li>
-                        <li><a href="Playlists/affichage.html" class="nav-link px-2 text-white">Playlist</a></li>
-                        <li><a href="Playlists/creation.html" class="nav-link px-2 text-secondary">Créer playlist</a></li>
+                        <li><a href="../accueil/index.php" class="nav-link px-2 text-white">Accueil</a></li>
+                        <li><a href="affichage.php" class="nav-link px-2 text-white">Playlist</a></li>
+                        <li><a href="creation.php" class="nav-link px-2 text-secondary">Créer playlist</a></li>
                         <li><a href="Playlists/affichage.html" class="nav-link px-2 text-white">Favoris</a></li>
                     </ul>
         
@@ -50,6 +50,27 @@
                 <label for="nom" class="form-label">Nom de la playlist</label>
                 <input type="text" class="form-control" id="nom" name="nom">
             </div>
+            <?php
+            include '../PHP/connect.php';
+
+            echo '<h>Choisissez les titres à ajouter à la playlist</h>';
+            // Fetch the titles from the database
+            $sql = "SELECT Titre FROM Titres";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                // Output the titles as options in the select element
+                echo '<select class="form-select" id="multiple-select-clear-field" data-placeholder="Choose anything" multiple>';
+                while ($row = $result->fetch_assoc()) {
+                    echo '<option>' . $row["Titre"] . '</option>';
+                }
+                echo '</select>';
+            } else {
+                echo "No titles found in the database.";
+            }
+            // Close the database connection
+            $conn->close();
+            ?>
             
             <div class="mb-3">
                 <label for="partager" class="form-label">Partager la playlist ?</label>
@@ -60,26 +81,5 @@
             </div>
             <button type="submit" class="btn btn-primary">Créer</button>
         </form>
-        <?php
-        include '../PHP/connect.php';
-
-        // Fetch the titles from the database
-        $sql = "SELECT titre FROM playlists";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            // Output the titles as options in the select element
-            echo '<select class="form-select" id="multiple-select-clear-field" data-placeholder="Choose anything" multiple>';
-            while ($row = $result->fetch_assoc()) {
-                echo '<option>' . $row["title"] . '</option>';
-            }
-            echo '</select>';
-        } else {
-            echo "No titles found in the database.";
-        }
-
-        // Close the database connection
-        $conn->close();
-        ?>
     </body>
 </html>
