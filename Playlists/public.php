@@ -14,7 +14,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         // Affichage du nom de la playlist avec l'ID dans l'attribut data et le lien vers la page
         echo '<div class="playlist-item" data-playlist-id="' . $row['PLAYLIST_ID'] . '">
-                <a href="/SAE-Dev-Web/Playlists/playform.php?playlist_id=' . $row['PLAYLIST_ID'] . '">' . htmlspecialchars($row['PLAYLIST_Nom']) . '</a>
+                <a href="playform.php?playlist_id=' . $row['PLAYLIST_ID'] . '">' . htmlspecialchars($row['PLAYLIST_Nom']) . '</a>
             </div>';
     }
 } else {

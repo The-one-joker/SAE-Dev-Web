@@ -5,11 +5,10 @@
 include '../PHP/connect.php';
 
 // Utilisateur actuellement connecté (exemple avec une session)
-$current_user_id = '1'; // Exemple, à remplacer par la méthode d'authentification appropriée
+$current_user_id = $_COOKIE['ID']; // Exemple, à remplacer par la méthode d'authentification appropriée
 
 // Requête SQL pour récupérer les playlists de l'utilisateur pour un album spécifique
-$sql = "SELECT playlists.PLAYLIST_ID, playlists.PLAYLIST_Nom 
-        FROM utilisateurs
+$sql = "SELECT playlists.PLAYLIST_ID, playlists.PLAYLIST_Nom FROM utilisateurs
         JOIN a_cree ON a_cree.USER_ID = utilisateurs.USER_ID
         JOIN playlists ON playlists.PLAYLIST_ID = a_cree.PLAYLIST_ID
         WHERE utilisateurs.USER_ID = $current_user_id"; // Ajout d'une condition pour filtrer par utilisateur
