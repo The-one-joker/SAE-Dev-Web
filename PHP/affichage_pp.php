@@ -4,8 +4,6 @@
 
     $sql = "SELECT Avatar FROM Utilisateurs WHERE USER_ID = " . $_COOKIE['ID'];
     $result = $conn->query($sql);
-    echo $result->fetch_assoc()['Avatar'];
-    //echo "<img src='../images/avatars/" . $result->fetch_assoc()['Avatar'] . "' alt='Avatar' style='width: 250px; height: 250px; border-radius: 50%;'>";
-
+    echo $result->fetch_assoc()['Avatar']; // Retourne le nom du fichier avatar de l'utilisateur en fonction de son ID (ex : 15.png)
     
 ?>

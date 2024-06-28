@@ -2,7 +2,7 @@
     include 'connect.php'; // Inclusion du fichier connect.php
 
     if (!empty($_POST['nom_album']) AND !empty($_POST['annee_sortie']) AND !empty($_POST['anecdote'])) {
-        // Insert album
+        // Insertion de l'album dans la base de données
         $sql = "INSERT INTO albums (Titre_Album, ARTISTE_ID, Annee_Album, Categorie_ID, Annecdote) VALUES ('" . $_POST['nom_album'] . "', '" . $_POST['select_artiste'] . "', '" . $_POST['annee_sortie'] . "', '" . $_POST['select_genre'] . "','" . $_POST['anecdote'] . "')";
         if ($conn->query($sql) === TRUE) {
             echo "Nouvel album ajouté avec succès";
@@ -11,7 +11,7 @@
         }
         
         if (isset($_FILES['ppA']['name']) AND !empty($_FILES['ppA']['name'])) {
-            // Récupérer l'ID de la dernière playlist
+            // Récupération de l'ID du dernier album ajouté
             $sql_album = "SELECT MAX(Album_ID) FROM albums";
             $result_album = $conn->query($sql_album);
             $row_album = $result_album->fetch_assoc();
@@ -30,11 +30,11 @@
                     $img_upload_path2 = '../images/pochettes/'.$new_img_name2;
                     move_uploaded_file($tmp_name2, $img_upload_path2);
     
-                    // Insert into Database
+                    // Mise à jour du champ "Pochette" dans la base de données
                     $sql3 = "UPDATE albums SET Pochette = '" . $new_img_name2 . "' WHERE Album_ID = " . $row_album['MAX(Album_ID)'];
                     
                     if ($conn->query($sql3) === TRUE) {
-                        echo "<br>Nouvel avatar pris en compte avec succès";
+                        echo "<br>Nouvelle pochette prise en compte avec succès";
                     } else {
                         echo "Erreur: " . $sql3 . "<br>" . $conn->error;
                     }

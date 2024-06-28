@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -48,7 +45,6 @@
                     <?php
                         include  'recup.php';
                     ?>
-                    <!-- Add more rows as needed -->
                 </tbody>
             </table>
         </div>

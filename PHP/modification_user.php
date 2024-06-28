@@ -1,21 +1,21 @@
 <?php
     include '../PHP/connect.php'; // Inclusion du fichier connect.php
 
-    // Update user
+    // Mettre à jour l'utilisateur
     if (!empty($_POST['nom_modif']) AND !empty($_POST['prenom_modif']) AND !empty($_POST['mail_modif'])) {
         $sql = "UPDATE Utilisateurs SET Nom = '" . $_POST['nom_modif'] . "', Prenom = '" . $_POST['prenom_modif'] . "', Mail = '" . $_POST['mail_modif'] . "' WHERE USER_ID = " . $_COOKIE['ID'];
 
         if ($conn->query($sql) === TRUE) {
-        echo "Utilisateur modifié avec succès";
+            echo "Utilisateur modifié avec succès";
         } else {
-        echo "Erreur: " . $sql . "<br>" . $conn->error;
+            echo "Erreur: " . $sql . "<br>" . $conn->error;
         }
     } else {
         echo "Veuillez remplir au moins les champs Nom, Prénom et Mail";
     }
     
 
-    // Update password
+    // Mettre à jour le mot de passe
     if (!empty($_POST['mdp_modif'])) {
         $password_hash = password_hash($_POST['mdp_modif'], PASSWORD_DEFAULT); // Hash du mot de passe
         $sql = "UPDATE Utilisateurs SET Mdp = '" . $password_hash . "' WHERE USER_ID = " . $_COOKIE['ID']; // Requête SQL
@@ -28,7 +28,7 @@
     }
 
 
-    // Upload image
+    // Télécharger une image
     if (isset($_FILES['pp']['name']) AND !empty($_FILES['pp']['name'])) {
          
          
@@ -46,7 +46,7 @@
                 $img_upload_path = '../images/avatars/'.$new_img_name;
                 move_uploaded_file($tmp_name, $img_upload_path);
 
-                // Insert into Database
+                // Insérer dans la base de données
                 $sql = "UPDATE Utilisateurs SET Avatar = '" . $new_img_name . "' WHERE USER_ID = " . $_COOKIE['ID'];
                 
                 if ($conn->query($sql) === TRUE) {

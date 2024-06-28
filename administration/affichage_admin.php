@@ -2,7 +2,9 @@
     if ($_COOKIE['Type'] == 'Admin') {
         echo "
         <h1>Liste des utilisateurs</h1>";
-        include '../PHP/profil.php';
+        include '../PHP/profil.php'; // Inclure le fichier profil.php pour afficher la liste des utilisateurs
+        
+        // Ajouter un utilisateur
         echo "
             <h1>Nouvel utilisateur</h1>
             <form method='post' action='../PHP/ajout.php'>
@@ -31,9 +33,13 @@
                         </tr>
                     </tbody>
                 </table>
-            </form>
-            <h1>Supprimer un utilisateur</h1>";
-        include '../PHP/dropdown.php';
+            </form>";
+        
+        // Supprimer un utilisateur
+        echo "<h1>Supprimer un utilisateur</h1>";
+        include '../PHP/dropdown.php'; // Inclure le fichier dropdown.php pour afficher la liste déroulante des utilisateurs à supprimer
+        
+        // Modifier un utilisateur
         echo "
             <h1>Modifier un utilisateur</h1>
             <form method='post' action='../PHP/modification.php'>
@@ -67,6 +73,8 @@
                 </table>
             </form>
         ";
+
+        // Ajouter un artiste
         echo "
             <h1>Ajouter un artiste</h1>
             <form method='post' action='../PHP/ajout_artiste.php'>
@@ -92,7 +100,7 @@
         // Supprimer un artiste
         echo "
             <h1>Supprimer un artiste</h1>";
-        include '../PHP/dropdown_artiste.php';
+        include '../PHP/dropdown_artiste.php'; // Inclure le fichier dropdown_artiste.php pour afficher la liste déroulante des artistes à supprimer
 
         // Supprimer un album
         echo "
@@ -113,10 +121,10 @@
                     <tbody>
                         <tr>
                             <td><input type='text' class='form-control' placeholder='Nom' aria-label='Search' name='nom_album'></td>";
-        include '../PHP/dropdown_album_artiste.php';
+        include '../PHP/dropdown_album_artiste.php'; // Inclure le fichier dropdown_album_artiste.php pour afficher la liste déroulante des artistes pour l'album
         echo "
                             <td><input type='number' class='form-control' placeholder='Année de sortie' aria-label='Search' name='annee_sortie'></td>";
-        include '../PHP/dropdown_album_genre.php';
+        include '../PHP/dropdown_album_genre.php'; // Inclure le fichier dropdown_album_genre.php pour afficher la liste déroulante des genres pour l'album
         echo "
                             <td><input type='text' class='form-control' placeholder='Anecdote' aria-label='Search' name='anecdote'></td>
                             <td><input type='file' class='form-control' placeholder='Pochette' aria-label='Search' name='ppA'></td>
@@ -134,7 +142,7 @@
                 <table>
                     <thead>
                         <tr>";
-        include '../PHP/dropdown_album_album.php';
+        include '../PHP/dropdown_album_album.php'; // Inclure le fichier dropdown_album_album.php pour afficher la liste déroulante des albums à supprimer
         echo "
                             <td><button type='submit' class='btn btn-primary'>Supprimer</button></td>
                         </tr>
@@ -162,12 +170,12 @@
                         <tr>
                             <td><input type='text' class='form-control' placeholder='Nom' aria-label='Search' name='nom_titre'></td>
         ";
-        include '../PHP/dropdown_album_artiste.php';
-        include '../PHP/dropdown_album_album.php';
+        include '../PHP/dropdown_album_artiste.php'; // Inclure le fichier dropdown_album_artiste.php pour afficher la liste déroulante des artistes pour le titre
+        include '../PHP/dropdown_album_album.php'; // Inclure le fichier dropdown_album_album.php pour afficher la liste déroulante des albums pour le titre
         echo "
                             <td><input type='number' class='form-control' placeholder='Année de sortie' aria-label='Search' name='annee_sortie'></td>
                             <td><input type='time' step='2' class='form-control' placeholder='Durée' aria-label='Search' name='duree'></td>";
-        include '../PHP/dropdown_album_genre.php';
+        include '../PHP/dropdown_album_genre.php'; // Inclure le fichier dropdown_album_genre.php pour afficher la liste déroulante des genres pour le titre
         echo "
                             <td><button type='submit' class='btn btn-primary'>Ajouter</button></td>
                         </tr>
@@ -182,7 +190,7 @@
                 <table>
                     <thead>
                         <tr>";
-        include '../PHP/dropdown_titre.php';
+        include '../PHP/dropdown_titre.php'; // Inclure le fichier dropdown_titre.php pour afficher la liste déroulante des titres à supprimer
         echo "
                             <td><button type='submit' class='btn btn-primary'>Supprimer</button></td>
                         </tr>

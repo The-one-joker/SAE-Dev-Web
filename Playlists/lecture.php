@@ -1,6 +1,6 @@
 <?php
 // Inclure le fichier qui contient la connexion à la base de données
-include '../index.php';
+include '../PHP/connect.php';
 
 // Récupérer les données de l'album à partir des cookies (exemple)
 $album_id = 'album_id'; // À adapter selon la manière dont vous stockez les données

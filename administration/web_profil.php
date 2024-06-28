@@ -52,9 +52,10 @@
             $Mail = $row['Mail'];
         ?>
         
+        <!-- Modification de son profil -->
         <h1>Profil utilisateur</h1>
         <form method='post' action='../PHP/modification_user.php' enctype="multipart/form-data">
-            <table class='table table-borderless' border=1>
+            <table class='table table-borderless' border>
                 <thead>
                     <tr>
                         <th style="width:10%" scope='col'></th>
@@ -91,7 +92,7 @@
             </table>
         </form>
         <?php
-            include 'affichage_admin.php';
+            include 'affichage_admin.php'; // Inclusion du fichier affichage_admin.php qui affiche les composants administrateur si l'utilisateur est un administrateur
         ?>
     </body>
 </html>

@@ -9,10 +9,8 @@ $loginOK = false;
 
 // Vérifier si le formulaire a été soumis et que les champs ne sont pas vides
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    echo "Formulaire soumis<br>";
 
     if (!empty($_POST['login']) && !empty($_POST['password'])) {
-        echo "Champs non vides<br>";
 
         $login = $_POST['login'];
         $password = $_POST['password'];
@@ -35,17 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     setcookie('Nom', $data['Nom'], time() + (86400 * 30), "/");
                     setcookie('prenom', $data['Prenom'], time() + (86400 * 30), "/");
                     setcookie('mail', $data['Mail'], time() + (86400 * 30), "/");
-                
-                    //echo "Type Account : " . $_SESSION['Type'] . " <br>";
-                    //echo "Name : " . $_SESSION['Nom'] . " <br>";
-                    //echo "Connexion réussie !<br>";
-
-                    //echo "UserID: " . $_COOKIE['ID'] . "<br>";
-                    //echo "Type Account: " . $_COOKIE['Type'] . "<br>";
-                    //echo "Name: " . $_COOKIE['Nom'] . "<br>";
-                    //echo "First Name: " . $_COOKIE['prenom'] . "<br>";
-                    
-                    
+     
                     if ($_COOKIE ['Type'] == 'Admin') {
                         header('Location: ../administration/web_profil.php');
                         exit;
@@ -71,12 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "Formulaire non soumis.<br>";
 } 
 
-
 // Fermer la connexion à la base de données
 mysqli_close($conn);
-
-
-echo "Fin du script<br>";
-
 
 ?>
