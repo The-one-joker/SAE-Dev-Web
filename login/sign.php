@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Champs non vides<br>";
 
         $email = $_POST['email'];
-        $password = $_POST['Mdp'];
+        $password = password_hash($_POST['Mdp'], PASSWORD_DEFAULT);
         $nom = $_POST['Nom'];
         $prenom = $_POST['Prenom'];
         $type = 'User';

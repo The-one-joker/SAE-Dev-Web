@@ -19,19 +19,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql = "SELECT * FROM Utilisateurs WHERE Mail = '$login'";
         $result = mysqli_query($conn, $sql);
 
+        var_dump($password);
+
         if ($result) {
             if (mysqli_num_rows($result) > 0) {
                 $data = mysqli_fetch_assoc($result);
                 // On vérifie que son mot de passe est correct
-                if ($password == $data['Mdp']) {
+                $password_hash = $data['Mdp'];
+                
+                if (password_verify($password, $password_hash) == 1) {
                     $loginOK = true;
+                    echo "<br>Connexion réussie !<br>";
                     setcookie('ID', $data['USER_ID'], time() + (86400 * 30), "/");
                     setcookie('Type', $data['Type'], time() + (86400 * 30), "/");
                     setcookie('Nom', $data['Nom'], time() + (86400 * 30), "/");
                     setcookie('prenom', $data['Prenom'], time() + (86400 * 30), "/");
                     setcookie('mail', $data['Mail'], time() + (86400 * 30), "/");
-                    
-                    
+                
                     //echo "Type Account : " . $_SESSION['Type'] . " <br>";
                     //echo "Name : " . $_SESSION['Nom'] . " <br>";
                     //echo "Connexion réussie !<br>";
@@ -41,17 +45,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     //echo "Name: " . $_COOKIE['Nom'] . "<br>";
                     //echo "First Name: " . $_COOKIE['prenom'] . "<br>";
                     
-
+                    
                     if ($_COOKIE ['Type'] == 'Admin') {
                         header('Location: ../administration/web_profil.php');
                         exit;
                     } else {
+                        echo password_verify($password, $data['Mdp']);
                         header('Location: ../accueil/index.php');
                     }
                     
                 } else {
                     echo "Mot de passe incorrect.<br>";
-                    header('Location: ../accueil/index.php');
+                    header('Location: ../accueil/index_nolog.html');
                 }
             } else {
                 echo "Nom d'utilisateur non trouvé.<br>";

@@ -17,7 +17,8 @@
 
     // Update password
     if (!empty($_POST['mdp_modif'])) {
-        $sql = "UPDATE Utilisateurs SET Mdp = '" . $_POST['mdp_modif'] . "' WHERE USER_ID = " . $_COOKIE['ID'];
+        $password_hash = password_hash($_POST['mdp_modif'], PASSWORD_DEFAULT); // Hash du mot de passe
+        $sql = "UPDATE Utilisateurs SET Mdp = '" . $password_hash . "' WHERE USER_ID = " . $_COOKIE['ID']; // Requête SQL
         
         if ($conn->query($sql) === TRUE) {
             echo "<br>Mot de passe modifié avec succès";

@@ -53,7 +53,7 @@
         ?>
         
         <h1>Profil utilisateur</h1>
-        <form method='post' action='modification_user.php' enctype="multipart/form-data">
+        <form method='post' action='../PHP/modification_user.php' enctype="multipart/form-data">
             <table class='table table-borderless' border=1>
                 <thead>
                     <tr>
