@@ -9,8 +9,6 @@
         
         <script src="multiple_select.js"></script>
         
-        
-        <!-- Ajoutez ici les liens vers les fichiers CSS et JavaScript nécessaires -->
         <header class="p-3 mb-3 border-bottom text-bg-dark">
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -45,33 +43,13 @@
     </head>
 
     <body>
-        <form action="../creation_play.php" method="post">
+        <form action="../PHP/ajout_play.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="nom" class="form-label">Nom de la playlist</label>
-                <input type="text" class="form-control" id="nom" name="nom">
+                <input type="text" class="form-control" id="nom" name="nom_playlist">
             </div>
-            <?php
-            include '../PHP/connect.php';
-
-            echo '<h>Choisissez les titres à ajouter à la playlist</h>';
-            // Fetch the titles from the database
-            $sql = "SELECT Titre FROM Titres";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-                // Output the titles as options in the select element
-                echo '<select class="form-select" id="multiple-select-clear-field" data-placeholder="Choose anything" multiple>';
-                while ($row = $result->fetch_assoc()) {
-                    echo '<option>' . $row["Titre"] . '</option>';
-                }
-                echo '</select>';
-            } else {
-                echo "No titles found in the database.";
-            }
-            // Close the database connection
-            $conn->close();
-            ?>
-            
+             
+    
             <div class="mb-3">
                 <label for="partager" class="form-label">Partager la playlist ?</label>
                 <select class="form-select" id="partager" name="partager">
@@ -79,6 +57,9 @@
                     <option value="0">Non</option>
                 </select>
             </div>
+            <label>Image de la playlist</label>
+            <input class="form-control" type="file" name="pochette_play">
+            <br>
             <button type="submit" class="btn btn-primary">Créer</button>
         </form>
     </body>
