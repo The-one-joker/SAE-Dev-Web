@@ -1,14 +1,18 @@
 <?php
     include 'connect.php'; // Inclusion du fichier connect.php
+    if (!empty($_POST['nom_modif']) AND !empty($_POST['prenom_modif']) AND !empty($_POST['mail_modif']) AND !empty($_POST['mdp_modif']) AND !empty($_POST['type_modif'])) {
+        $password_hash = password_hash($_POST['mdp_modif'], PASSWORD_DEFAULT);
+        $sql = "UPDATE Utilisateurs SET Nom = '" . $_POST['nom_modif'] . "', Prenom = '" . $_POST['prenom_modif'] . "', Mail = '" . $_POST['mail_modif'] . "', Mdp = '" . $password_hash . "', Type = '" . $_POST['type_modif'] . "' WHERE USER_ID = " . $_POST['id_modif'];
 
-    $sql = "UPDATE Utilisateurs SET Nom = '" . $_POST['nom_modif'] . "', Prenom = '" . $_POST['prenom_modif'] . "', Mail = '" . $_POST['mail_modif'] . "', Mdp = '" . $_POST['mdp_modif'] . "', Type = '" . $_POST['type_modif'] . "' WHERE USER_ID = " . $_POST['id_modif'];
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Utilisateur modifié avec succès";
+        if ($conn->query($sql) === TRUE) {
+            echo "Utilisateur modifié avec succès";
+        } else {
+            echo "Erreur: " . $sql . "<br>" . $conn->error;
+        }
     } else {
-        echo "Erreur: " . $sql . "<br>" . $conn->error;
+        echo "Veuillez remplir tous les champs";
     }
-
+    
     echo "</br><button type='button'><a href='../administration/web_profil.php' style='text-decoration: none; color: inherit;'>Retour</a></button>";
     $conn->close();
 ?>
