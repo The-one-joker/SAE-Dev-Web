@@ -60,7 +60,7 @@
                 exit;
             }
         }else {
-            echo "<br> Pas bon...";
+            echo "<br> Erreur autre ...";
             exit;
         }
     }
