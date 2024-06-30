@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-echo "Début du script<br>";
-
 include '../PHP/connect.php';
 
 $loginOK = false;

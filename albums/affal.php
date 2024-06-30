@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playlists</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="ryth.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/23cecef777.js" crossorigin="anonymous"></script>
@@ -29,7 +29,7 @@
                     </li>
 
                     <li>
-                        <a href="../albums/affal.php">
+                        <a href="#">
                         <span class="icon-wrapper">
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-disc" viewBox="0 0 16 16">
     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
@@ -42,9 +42,9 @@
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a href="../gofinal/test.php">
                             <span class="fa fas fa-book"></span>
-                            <span>Your Playlists</span>
+                            <span>Albums</span>
                         </a>
                     </li>
                 </ul>
@@ -93,80 +93,15 @@
 
 <!-- MYYYYYY PLLLLLAAYYYYYLISSSSSTTTTT PARRRRTTTTTTT -->
 
-            <div class="spotify-playlists">
-            <section class="App__section App__quick-links">
-          <h2>Bests Songs</h2>
-          <div class="App__quick-links-container">     
-            <div class="App__quick-link">
-              <div class="App__quick-link-featured-img"></div>
-              <span class="songs"><p>ariste <br>
-                Titre</p></span>
-              
-            </div>
-            <div class="App__quick-link">
-              <div class="App__quick-link-featured-img"></div>
-              <span class="songs"><p>ariste <br>
-                Titre</p></span>
-              
-            </div>
-            <div class="App__quick-link">
-              <div class="App__quick-link-featured-img"></div>
-              <span class="songs"><p class="song">ariste <br>
-                Titre</p></span>
-              
-            </div>
-            <div class="App__quick-link">
-              <div class="App__quick-link-featured-img"></div>
-              <span class="songs"><p>ariste <br>
-                Titre</p></span>
-              
-            </div>
-            <div class="App__quick-link">
-              <div class="App__quick-link-featured-img"></div>
-              <span class="songs"><p>ariste <br>
-                Titre</p></span>
-              
-            </div>
-            <div class="App__quick-link">
-              <div class="App__quick-link-featured-img"></div>
-              <span class="songs"><p>ariste <br>
-                Titre</p></span>
-              
-            </div>
-                
-          </div>
-        </section>
 
-    //../albums/recupal.php
-
-
-    
-
-
-   
-
-
-
-     // include ../Playlists/public.php
-
-
-
-            </div>
 
             <div class="spotify-playlists">
-                <h2>My Playlists</h2>
+                <h2>My favorites</h2>
                 <div id="wrapper">
                     <div id="carousel">
                         
                         <div id="content">
-                            <div class="item">
-                                <img src="https://i.scdn.co/image/ab67616d0000b2733b5e11ca1b063583df9492db" alt="Playlist Image">
-                                <div class="play">
-                                    <span class="fa fa-play"></span>
-                                </div>
-                                <h4>Titre Album</h4>
-                                <p>Créé par</p>
-                            </div>
+                        <?php include 'recupfav.php'?>
                         </div>
                     </div>
                     <button id="prev">
@@ -184,19 +119,29 @@
                 </div>
             </div>
 
+            //playal.php
+
             <div class="spotify-playlists">
-                <h2>Public Playlists</h2>
+                <h2>Top Albums </h2>
+                <div id="wrapper">
+                    <div id="carousel">
+                        
+                        <div id="content">
+                        <?php include 'top.php'?>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+
+
+            <div class="spotify-playlists">
+                <h2>Albums</h2>
                 <div id="wrapper2">
                     <div id="carousel2">
                         <div id="content2">
-                            <div class="item">
-                                <img src="https://i.scdn.co/image/ab67616d0000b2733b5e11ca1b063583df9492db" alt="Playlist Image">
-                                <div class="play">
-                                    <span class="fa fa-play"></span>
-                                </div>
-                                <h4>Titre Album</h4>
-                                <p>Créé par</p>
-                            </div>
+                        <?php include 'recupal.php'?>
                 <!-- Plus d'éléments peuvent être ajoutés ici -->
                         </div>
                     </div>
@@ -219,8 +164,9 @@
 
 
 
+            <hr>
         </div>
     </main>
-    <script src="test.js"></script>
+    <script src="../gofinal/test.js"></script>
 </body>
 </html>
