@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include '../PHP/connect.php';
+include '/PHP/connect.php';
 
 $loginOK = false;
 

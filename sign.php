@@ -3,7 +3,7 @@ session_start();
 
 echo "Début du script d'inscription<br>";
 
-include '../PHP/connect.php';
+include '/PHP/connect.php';
 
 // Vérifier si le formulaire a été soumis et que les champs ne sont pas vides
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
