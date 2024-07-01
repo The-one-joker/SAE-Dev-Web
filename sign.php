@@ -3,7 +3,7 @@ session_start();
 
 echo "Début du script d'inscription<br>";
 
-include '/PHP/connect.php';
+include 'PHP/connect.php';
 
 // Vérifier si le formulaire a été soumis et que les champs ne sont pas vides
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (mysqli_query($conn, $sql)) {
             echo "Inscription réussie !<br>";
             // Rediriger vers la page de connexion ou d'accueil après l'inscription
-            header('Location: login.html');
+            header('Location: index.html');
             exit;
         } else {
             echo "Erreur : " . $sql . "<br>" . mysqli_error($conn);

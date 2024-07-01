@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include '/PHP/connect.php';
+include 'PHP/connect.php';
 
 $loginOK = false;
 
@@ -33,11 +33,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     setcookie('mail', $data['Mail'], time() + (86400 * 30), "/");
      
                     if ($_COOKIE ['Type'] == 'Admin') {
-                        header('Location: ../administration/web_profil.php');
+                        header('Location: administration/web_profil.php');
                         exit;
                     } else {
                         echo password_verify($password, $data['Mdp']);
-                        header('Location: ../accueil/index.php');
+                        header('Location: accueil/index.php');
                     }
                     
                 } else {
