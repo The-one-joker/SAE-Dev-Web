@@ -118,9 +118,6 @@
                     </button>
                 </div>
             </div>
-
-            //playal.php
-
             <div class="spotify-playlists">
                 <h2>Top Albums </h2>
                 <div id="wrapper">
@@ -134,8 +131,6 @@
                     
                 </div>
             </div>
-
-
             <div class="spotify-playlists">
                 <h2>Albums</h2>
                 <div id="wrapper2">

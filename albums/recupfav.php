@@ -2,8 +2,8 @@
 <?php
 include '../PHP/connect.php';
 
-// Utilisateur actuellement connecté (exemple avec une session)
-$current_user_id = $_COOKIE['ID']; // Exemple, à remplacer par la méthode d'authentification appropriée
+// Utilisateur actuellement connecté 
+$current_user_id = $_COOKIE['ID']; 
 
 // Requête SQL pour récupérer les albums favoris d'un utilisateur
 $sql = "SELECT albums.*, artistes.ARTISTE_Nom, artistes.ARTISTE_Prenom, categorie.Categorie 
@@ -14,16 +14,6 @@ $sql = "SELECT albums.*, artistes.ARTISTE_Nom, artistes.ARTISTE_Prenom, categori
         WHERE favoris.USER_ID = $current_user_id";
 
 $result = $conn->query($sql);
-
-
-
-
- //../albums/playal.php
-
-
-
-
- 
 // Vérifier si des résultats ont été trouvés
 if ($result->num_rows > 0) {
     // Stocker les résultats dans des variables
