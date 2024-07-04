@@ -6,7 +6,7 @@
         $sql = "INSERT INTO Utilisateurs (Nom, Prenom, Mail, Mdp, Type) VALUES ('" . $_POST['nom'] . "', '" . $_POST['prenom'] . "', '" . $_POST['mail'] . "', '" . $password_hash . "', '" . $_POST['type'] . "')";
 
         if ($conn->query($sql) === TRUE) { // Vérifie si la requête d'insertion a réussi
-            echo "Nouvel utilisateur ajouté avec succès";
+            
         } else {
             echo "Erreur: " . $sql . "<br>" . $conn->error; // Affiche l'erreur en cas d'échec de la requête
         }

@@ -1,89 +1,148 @@
+
+
 <!DOCTYPE html>
 <html lang="fr" data-bs-theme="dark">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Playlists</title>
-        <link rel="stylesheet" href="affichage.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        
-    </head>
-    <?php
-        include 'play.php';
-    ?>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlists</title>
+    <link rel="stylesheet" href="ryth.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/23cecef777.js" crossorigin="anonymous"></script>
+    <script src="test.js"></script>
+</head>
 <body>
-
-    <header class="p-3 mb-3 border-bottom text-bg-dark">
-            <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
-                        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-                    </a>
-        
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="../accueil/index.php" class="nav-link px-2 text-white">Accueil</a></li>
-                        <li><a href="affichage.php" class="nav-link px-2 text-secondary">Playlist</a></li>
-                        <li><a href="creation.php" class="nav-link px-2 text-white">Créer playlist</a></li>
-                        <li><a href="Playlists/affichage.html" class="nav-link px-2 text-white">Favoris</a></li>
-                    </ul>
-        
+    <?php include 'play.php'?>
+    <main>
+        <div class="sidebar">
+            <div class="logo">
+                <a href="#">
+                    <img src="../images/avatars/002.png" alt="Logo">
+                </a>
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="fa fa-home"></span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../accueil/index.php">
+                            <span class="icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-disc" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                    <path d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0M8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1m4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5"/>
+                                </svg>
+                            </span>
+                            <span class="boom">Albums</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../albums/affal.php">
+                            <span class="fa fas fa-book"></span>
+                            <span>Albums</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="../Playlists/creation.php">
+                            <span class="fa fas fa-plus-square"></span>
+                            <span>Create Playlist</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fa fas fa-heart"></span>
+                            <span>Favorite Albums</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="topbar">
+                <div class="navbar">
                     <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
                         <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                     </form>
-        
                     <div class="dropdown text-end">
                         <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../images/avatars/<?php include '../PHP/affichage_pp.php'?>" alt="mdo" width="32" height="32" class="rounded-circle">
+                            <img src="../images/avatars/<?php include '../PHP/affichage_pp.php'?>" alt="mdo" width="32" height="32" class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu text-small">
-                 ``
-           <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../administration/web_profil.php">Profil</a></li>
+                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="index.html">Se déconnecter</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </header>
-        <div class="containero">
-        <div class="headero">
-            <div class="big-square"></div>
-            <div class="title-info">
-                <h1>Titres favoris</h1>
-                <div class="info">
-                    <p>
-                    <?php
-                        // Affiche du texte dans le div
-                        echo "Nombre de titres: " . $nombre_titres . "<br>";
-                    ?>
-                    </p>
+
+            <!-- MYYYYYY PLLLLLAAYYYYYLISSSSSTTTTT PARRRRTTTTTTT -->
+            <div class="spotify-playlists">
+                <h2>My favorites</h2>
+                <div id="wrapper">
+                    <div id="carousel">
+                        <div id="content">
+                            <?php include 'prive.php'?>
+                        </div>
+                    </div>
+                    <button id="prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="none" d="M0 0h24v24H0V0z"></path>
+                            <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z"></path>
+                        </svg>
+                    </button>
+                    <button id="next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="none" d="M0 0h24v24H0V0z"></path>
+                            <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
-        </div>
-        <h2>Mes Playlists</h2>
-        <div class="playlist-container">
-            <button class="chevron" id="left-chevron">&#8249;</button>
-            <div class="playlists" id="my-playlists">
-                <?php
-                    include 'prive.php';
-                ?>
+            <div class="spotify-playlists">
+                <h2>Top Albums </h2>
+                <div id="wrapper">
+                    <div id="carousel">
+                        <div id="content">
+                            <?php include 'top.php'?>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button class="chevron" id="right-chevron">&#8250;</button>
-        </div>
-        <h2>Playlists Publiques</h2>
-        <div class="playlist-container">
-            <button class="chevron" id="left-chevron-public">&#8249;</button>
-            <div class="playlists" id="public-playlists">
-                <!-- Public playlist items -->
-                <?php
-                    include 'public.php';
-                ?>
+            <div class="spotify-playlists">
+                <h2>Albums</h2>
+                <div id="wrapper2">
+                    <div id="carousel2">
+                        <div id="content2">
+                            <?php include 'public.php'?>
+                            <!-- Plus d'éléments peuvent être ajoutés ici -->
+                        </div>
+                    </div>
+                    <button id="prev2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="none" d="M0 0h24v24H0V0z"></path>
+                            <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z"></path>
+                        </svg>
+                    </button>
+                    <button id="next2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="none" d="M0 0h24v24H0V0z"></path>
+                            <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <button class="chevron" id="right-chevron-public">&#8250;</button>
+            <hr>
         </div>
-    </div>
-    <script src="scripts.js"></script>
+    </main>
+    <script src="../gofinal/test.js"></script>
 </body>
-
 </html>

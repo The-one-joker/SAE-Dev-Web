@@ -6,4 +6,7 @@
     $result = $conn->query($sql);
     echo $result->fetch_assoc()['Avatar']; // Retourne le nom du fichier avatar de l'utilisateur en fonction de son ID (ex : 15.png)
     
+
+
+   // $sql2 = "SELECT Pochette FROM albums WHERE ALBUM_ID = " . $_GET['album_id'];
 ?>

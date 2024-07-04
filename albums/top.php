@@ -3,6 +3,7 @@ include '../PHP/connect.php';
 
 
 
+
 // Requête SQL pour récupérer les 6 albums les plus récents
 $sql = "SELECT albums.*, artistes.ARTISTE_Nom, artistes.ARTISTE_Prenom, categorie.Categorie 
         FROM albums
@@ -30,16 +31,27 @@ if ($result->num_rows > 0) {
         $categorie = $row["Categorie"];
         
 
-         //../albums/playal.php
 
-
+        
         echo'<div class="item" data-album-id="$album_id">
-                                <img src="../images/avatars/0.png" alt="Playlist Image">
+
+                                <div class="pochette">
+                                        <img src="../images/pochettes/' . htmlspecialchars($pochette) . '" alt="Playlist Image">
+                                        </div>
+
                                 <div class="play">
-                                    <span class="fa fa-play"></span>
+                                <a href="/SAE-Dev-Web/albums/playal.php?album_id=' . $album_id . '"><span class="fa fa-play"></span></a> <span class="fa fa-play"></span>
                                 </div>
-                                <h4>' . htmlspecialchars($titre_album) . '</h4>
-                                <a href="/SAE-Dev-Web/albums/playal.php?album_id=' . $album_id . '">' . htmlspecialchars($titre_album) . '</a>
+
+                                <div class="title">
+                                    <h3>' . htmlspecialchars($titre_album) . '</h3>
+                                    <h4>' . htmlspecialchars($artiste_nom) . ' ' . htmlspecialchars($artiste_prenom) . '</h4>
+                                </div> 
+
+                                <div class="img2">
+                                  <a href="/SAE-Dev-Web/albums/ajoutfav.php?album_id=' . $album_id . '"> <img class="like" src="../images/icons/liki.svg"> </a>
+                                </div>
+                                
                             </div>';
     }
 } else {

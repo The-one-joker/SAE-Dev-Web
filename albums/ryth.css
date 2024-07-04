@@ -196,7 +196,7 @@
   .spotify-playlists .list .item h4 {
     color: #ffffff;
     font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -219,7 +219,6 @@
     position: relative;
     z-index: -1;
   }
-  
   .preview {
     position: fixed;
     bottom: 0;
@@ -306,6 +305,7 @@
   }
   
   .item {
+
     width: 180px;
     height: 180px;
     background: green;
@@ -323,9 +323,11 @@
   }
   
   .spotify-playlists #wrapper #carousel #content .item {
+    display: flex;
+    flex-direction: column;
     min-width: 140px;
     width: 160px;
-    height: 200px;
+    height: auto;
     min-height: 200px;
     padding: 15px;
     background-color: #181818;
@@ -333,7 +335,45 @@
     cursor: pointer;
     transition: all ease 0.4s;
   }
+
+  .spotify-playlists #wrapper #carousel #content .item .pochette {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 2px;
+  }
+
+
+
+  .spotify-playlists #wrapper #carousel #content .item .pochette img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+  }
   
+
+
+  .spotify-playlists #wrapper #carousel #content .item .img2 {
+    width: 90%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+
+  .spotify-playlists #wrapper #carousel #content .item .img2 .like {
+    width: 20%;
+    border-radius: 6px;
+  }
+
+  .spotify-playlists #wrapper #carousel #content .item .img2 .like:hover {
+    transform: scale(1.2);
+  }
+
+
   .spotify-playlists #wrapper #carousel #content .item:hover {
     background-color: #252525;
   }
@@ -365,9 +405,21 @@
   }
   
   .spotify-playlists #wrapper #carousel #content .item h4 {
+  
     color: #ffffff;
     font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .spotify-playlists #wrapper #carousel #content .item h3 {
+  
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 8px;
+    margin-top: 8px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -389,129 +441,6 @@
 
 
 
-  #wrapper2 {
-    width: 100%;
-    position: relative;
-  }
-  
-  #carousel2 {
-    overflow: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-  }
-  
-  #carousel2::-webkit-scrollbar {
-    height: 0;
-  }
-  
-  #prev2,
-  #next2 {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    background: white;
-    border: none;
-    padding: 8px;
-    border-radius: 50%;
-    outline: 0;
-    cursor: pointer;
-    position: absolute;
-  }
-  
-  #prev2 {
-    top: 50%;
-    left: 0;
-    transform: translate(50%, -50%);
-    display: none;
-  }
-  
-  #next2 {
-    top: 50%;
-    right: 0;
-    transform: translate(-50%, -50%);
-  }
-  
-  #content2 {
-    display: grid;
-    grid-gap: 16px;
-    grid-auto-flow: column;
-    margin: auto;
-    box-sizing: border-box;
-  }
-  
-
-  .spotify-playlists #wrapper2 #carousel2 #content2 .item {
-    min-width: 140px;
-    width: 160px;
-    padding: 15px;
-    background-color: #181818;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all ease 0.4s
-  }
-  
-  .spotify-playlists #wrapper2 #carousel2 #content2 .item {
-    min-width: 140px;
-    width: 160px;
-    height: 200px;
-    min-height: 200px;
-    padding: 15px;
-    background-color: #181818;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all ease 0.4s;
-  }
-  
-  .spotify-playlists #wrapper2 #carousel2 #content2 .item:hover {
-    background-color: #252525;
-  }
-  
-  .spotify-playlists #wrapper2 #carousel2 #content2 .item img {
-    width: 90%;
-    border-radius: 6px;
-    margin-bottom: 10px;
-  }
-  
-  .spotify-playlists #wrapper2 #carousel2 #content2 .item .play {
-    position: relative;
-  }
-  
-  .spotify-playlists #wrapper2 #carousel2 #content2 .item .play .fa {
-    position: absolute;
-    right: 10px;
-    top: -60px;
-    padding: 18px;
-    background-color: #1db954;
-    border-radius: 100%;
-    opacity: 0;
-    transition: all ease 0.4s;
-  }
-  
-  .spotify-playlists #wrapper2 #carousel2 #content2 .item:hover .play .fa {
-    opacity: 1;
-    transform: translateY(-20px);
-  }
-  
-  .spotify-playlists #wrapper2 #carousel2 #content2 .item h4 {
-    color: #ffffff;
-    font-size: 14px;
-    margin-bottom: 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .spotify-playlists #wrapper2 #carousel2 #content2 .item p {
-    color: #989898;
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: 600;
-  }
-  
-  #carousel2 {
-    scroll-behavior: smooth;
-  }
-
 
   .sidebar .policies {
     position: absolute;
@@ -532,3 +461,180 @@
 
 
 
+  .spotify-playlists {
+    padding: 5px 40px;
+  }
+
+  .spotify-playlists h2 {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  #wrapper2 {
+    width: 100%;
+    position: relative;
+  }
+
+  #carousel2 {
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  #carousel2::-webkit-scrollbar {
+    height: 0;
+  }
+
+  #prev2,
+  #next2 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: white;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    outline: 0;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  #prev2 {
+    top: 50%;
+    left: 0;
+    transform: translate(50%, -50%);
+    display: none;
+  }
+
+  #next2 {
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  #content2 {
+    display: grid;
+    grid-gap: 16px;
+    grid-auto-flow: column;
+    margin: auto;
+    box-sizing: border-box;
+  }
+
+  .spotify-playlists #wrapper2 #carousel2 #content2 .item {
+    min-width: 140px;
+    width: 160px;
+    padding: 15px;
+    background-color: #181818;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all ease 0.4s;
+  }
+
+  .spotify-playlists #wrapper2 #carousel2 #content2 .item {
+    display: flex;
+    flex-direction: column;
+    min-width: 140px;
+    width: 160px;
+    height: auto;
+    min-height: 200px;
+    padding: 15px;
+    background-color: #181818;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all ease 0.4s;
+  }
+
+  .spotify-playlists #wrapper2 #carousel2 #content2 .item .pochette {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 2px;
+  }
+
+  .spotify-playlists #wrapper2 #carousel2 #content2 .item .pochette img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+  }
+
+  .spotify-playlists #wrapper2 #carousel2 #content2 .item .img2 {
+    width: 90%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+
+  .spotify-playlists #wrapper2 #carousel2 #content2 .item .img2 .like {
+    width: 20%;
+    border-radius: 6px;
+  }
+
+  .spotify-playlists #wrapper2 #carousel2 #content2 .item .img2 .like:hover {
+    transform: scale(1.2);
+  }
+
+  .spotify-playlists #wrapper2 #carousel2 #content2 .item:hover {
+    background-color: #252525;
+  }
+
+  .spotify-playlists #wrapper2 #carousel2 #content2 .item img {
+    width: 90%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+
+  .spotify-playlists #wrapper2 #carousel2 #content2 .item .play {
+    position: relative;
+  }
+
+  .spotify-playlists #wrapper2 #carousel2 #content2 .item .play .fa {
+    position: absolute;
+    right: 10px;
+    top: -60px;
+    padding: 18px;
+    background-color: #1db954;
+    border-radius: 100%;
+    opacity: 0;
+    transition: all ease 0.4s;
+  }
+
+  .spotify-playlists #wrapper2 #carousel2 #content2 .item:hover .play .fa {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+
+  .spotify-playlists #wrapper2 #carousel2 #content2 .item h4 {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .spotify-playlists #wrapper2 #carousel2 #content2 .item h3 {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .spotify-playlists #wrapper2 #carousel2 #content2 .item p {
+    color: #989898;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+
+  #carousel2 {
+    scroll-behavior: smooth;
+  }

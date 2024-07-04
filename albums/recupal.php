@@ -7,6 +7,8 @@ $sql = "SELECT albums.*, artistes.ARTISTE_Nom, artistes.ARTISTE_Prenom, categori
         JOIN artistes ON albums.ARTISTE_ID = artistes.ARTISTE_ID
         JOIN categorie ON albums.Categorie_ID = categorie.Categorie_ID";
 
+
+        
 $result = $conn->query($sql);
 
 // Vérifier si des résultats ont été trouvés
@@ -24,21 +26,35 @@ if ($result->num_rows > 0) {
         $artiste_nom = $row["ARTISTE_Nom"];
         $artiste_prenom = $row["ARTISTE_Prenom"];
         $categorie = $row["Categorie"];
+        
 
- //../albums/playal.php
 
-        echo'<div class="item" data-album-id="$album_id">
-                                <img src="../images/avatars/0.png" alt="Playlist Image">
-                                <div class="play">
-                                    <span class="fa fa-play"></span>
-                                </div>
-                                <h4>' . htmlspecialchars($titre_album) . '</h4>
-                                <a href="/SAE-Dev-Web/albums/playal.php?album_id=' . $album_id . '">' . htmlspecialchars($titre_album) . '</a>
-                            </div>';
-    }
+        
+        echo '<div class="item" data-album-id="' . $album_id . '">
+        
+                                        <div class="pochette">
+                                        <img src="../images/pochettes/' . htmlspecialchars($pochette) . '" alt="Playlist Image">
+                                        </div>
+        
+                                        <div class="play">
+                                        <a href="/SAE-Dev-Web/albums/playal.php?album_id=' . $album_id . '"><span class="fa fa-play"></span></a> <span class="fa fa-play"></span>
+                                        </div>
+        
+                                        <div class="title">
+                                            <h3>' . htmlspecialchars($titre_album) . '</h3>
+                                            <h4>' . htmlspecialchars($artiste_nom) . ' ' . htmlspecialchars($artiste_prenom) . '</h4>
+                                        </div> 
+        
+                                        <div class="img2">
+                                            <a href="/SAE-Dev-Web/albums/ajoutfav.php?album_id=' . $album_id . '"> <img class="like" src="../images/icons/liki.svg"> </a>
+                                        </div>
+                                        
+                                    </div>';
+        }
 } else {
     echo "0 résultats";
 }
 
 $conn->close();
+
 ?>

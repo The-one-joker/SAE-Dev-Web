@@ -2,9 +2,9 @@
 // Inclure le fichier qui contient la connexion à la base de données
 include '../PHP/connect.php';
 
-// Récupérer les données de l'album à partir des cookies (exemple)
+// Récupérer les données de l'album à partir des cookies 
 $playlist_id = isset($_GET['playlist_id']) ? $_GET['playlist_id'] : '';
-echo $playlist_id;
+
 
 // Requête SQL pour récupérer les titres de l'album
 $sql2 = "SELECT TITRE_ID, Titre, Annee, Duree, Categorie_ID, ALBUM_ID, ARTISTE_ID 
