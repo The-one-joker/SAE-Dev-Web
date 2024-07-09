@@ -87,31 +87,36 @@
                     <div class="big-square"> <?php include 'pochette.php'; ?> </div>
                     <?php include 'infoal.php'; ?>
                     <div class="actions">
-                        <button class="action-btn" onclick="">&#10006; Supprimer des titres</button>
-                        <label class="switch">
-                            <input type="checkbox" id="share-checkbox">
-                            <span class="slider"></span>
-                        </label>
+                        
+
+
+                        <?php
+                            include 'part.php';
+                        ?>
+                        
+
                         <span style="color: white;">Partager la playlist</span>
-                        <button class="action-btn" onclick="">&#10006; Supprimer la playlist</button>
+                        
+                        
                     </div>
                 </div>
                 <div class="table-container">
                     <table>
                         <thead>
                             <tr>
-                                <th>N°</th>
-                                <th>Titres</th>
-                                <th>Albums</th>
-                                <th>Catégorie</th>
-                                <th>Artiste</th>
-                                <th>Année</th>
-                                <th>Durée</th>
+                                    <th>N°</th>
+                                    <th>Titres</th>
+                                    <th>Albums</th>
+                                    <th>Catégorie</th>
+                                    <th>Artiste</th>
+                                    <th>Année</th>
+                                    <th>Durée</th>
+                                    <th>Action</th>
                             </tr>
                         </thead>
                         <tbody id="playlist-rows" style="color: white;">
                             <?php
-                                include 'recup.php';
+                                include 'recup2.php';
                             ?>
                             <!-- Add more rows as needed -->
                         </tbody>

@@ -38,7 +38,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../Playlists/affichage.php">
                             <span class="fa fas fa-book"></span>
                             <span>Your Playlists</span>
                         </a>
@@ -54,7 +54,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../albums/affal.php">
                             <span class="fa fas fa-heart"></span>
                             <span>Favorite Albums</span>
                         </a>
@@ -112,22 +112,13 @@
                         </div>
                     </div>
                 </section>
-                <!--../albums/recupal.php-->
-                <!-- include ../Playlists/public.php -->
             </div>
             <div class="spotify-playlists">
-                <h2>My Playlists</h2>
+                <h2>Top Playlists</h2>
                 <div id="wrapper">
                     <div id="carousel">
                         <div id="content">
-                            <div class="item">
-                                <img src="https://i.scdn.co/image/ab67616d0000b2733b5e11ca1b063583df9492db" alt="Playlist Image">
-                                <div class="play">
-                                    <span class="fa fa-play"></span>
-                                </div>
-                                <h4>Titre Album</h4>
-                                <p>Créé par</p>
-                            </div>
+                            <?php include '../Playlists/top.php'?>
                         </div>
                     </div>
                     <button id="prev">
@@ -145,21 +136,17 @@
                 </div>
             </div>
             <div class="spotify-playlists">
-                <h2>Public Playlists</h2>
+                <h2>Top Albums </h2>
                 <div id="wrapper2">
                     <div id="carousel2">
                         <div id="content2">
-                            <div class="item">
-                                <img src="https://i.scdn.co/image/ab67616d0000b2733b5e11ca1b063583df9492db" alt="Playlist Image">
-                                <div class="play">
-                                    <span class="fa fa-play"></span>
-                                </div>
-                                <h4>Titre Album</h4>
-                                <p>Créé par</p>
-                            </div>
-                            <!-- Plus d'éléments peuvent être ajoutés ici -->
+                            <?php include '../albums/top.php'?>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            
                     <button id="prev2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="none" d="M0 0h24v24H0V0z"></path>

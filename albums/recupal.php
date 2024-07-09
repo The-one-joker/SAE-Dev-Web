@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
                                         </div>
         
                                         <div class="play">
-                                        <a href="/SAE-Dev-Web/albums/playal.php?album_id=' . $album_id . '"><span class="fa fa-play"></span></a> <span class="fa fa-play"></span>
+                                        <a href="../albums/playal.php?album_id=' . $album_id . '" style="text-decoration: none;"><span class="fa fa-play"></span></a>
                                         </div>
         
                                         <div class="title">
@@ -46,7 +46,7 @@ if ($result->num_rows > 0) {
                                         </div> 
         
                                         <div class="img2">
-                                            <a href="/SAE-Dev-Web/albums/ajoutfav.php?album_id=' . $album_id . '"> <img class="like" src="../images/icons/liki.svg"> </a>
+                                            <a href="../albums/ajoutfav.php?album_id=' . $album_id . '"> <img class="like" src="../images/icons/liki.svg"> </a>
                                         </div>
                                         
                                     </div>';

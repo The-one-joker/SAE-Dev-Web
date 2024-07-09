@@ -15,7 +15,6 @@
             $sql_album = "SELECT MAX(Album_ID) FROM albums";
             $result_album = $conn->query($sql_album);
             $row_album = $result_album->fetch_assoc();
-         
             $img_name2 = $_FILES['ppA']['name'];
             $tmp_name2 = $_FILES['ppA']['tmp_name'];
             $error2 = $_FILES['ppA']['error'];

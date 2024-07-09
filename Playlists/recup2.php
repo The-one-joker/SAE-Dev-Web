@@ -40,6 +40,7 @@ if ($result2->num_rows > 0) {
     while ($row = $result2->fetch_assoc()) {
 
         // Récupérer les données de chaque colonne
+        $titre_id = $row["TITRE_ID"];
         $titre_titre = $row["Titre"];
         $titre_annee = $row["Annee"];
         $titre_duree = $row["Duree"];
@@ -49,15 +50,21 @@ if ($result2->num_rows > 0) {
         $titre_artiste_id = $row["ARTISTE_Nom"];
 
         // Afficher chaque titre dans une ligne de tableau HTML
-        echo "<tr>";
-        echo "<td>" . ($iter) . "</td>";
-        echo "<td>" . $titre_titre . "</td>";
-        echo "<td>" . $titre_categorie_id . "</td>"; 
-        echo "<td>" . $nom_artiste . " " . $titre_artiste_id . "</td>";   
-        echo "<td>" . $titre_annee . "</td>";       
-        echo "<td>" . $titre_duree . "</td>";        
-        echo "</tr>";
-        $iter = $iter + 1;
+    echo "<tr>";
+    echo "<td>" . $iter . "</td>";
+    echo "<td>" . $titre_titre . "</td>";
+    echo "<td>" . $titre_album_id . "</td>";
+    echo "<td>" . $titre_categorie_id . "</td>";
+    echo "<td>" . $nom_artiste . " " . $titre_artiste_id . "</td>";
+    echo "<td>" . $titre_annee . "</td>";
+    echo "<td>" . $titre_duree . "</td>";
+    echo "<td> <a href='sup.php?album_id=" . $album_id_to_add . "&titre_id=" . $titre_id . "'>
+                    <button class='delete-btn'>
+                        <i class='fas fa-trash-alt'></i>
+                    </button>
+                </a></td>";
+    echo "</tr>";
+    $iter = $iter + 1;
     }
 } else {
     echo "<p style='color: white;'>Aucun titre trouvé pour cet album.</p>";

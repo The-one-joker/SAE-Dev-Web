@@ -30,26 +30,26 @@ if ($result->num_rows > 0) {
         $artiste_prenom = $row["ARTISTE_Prenom"];
         $categorie = $row["Categorie"];
 
-        echo'<div class="item" data-album-id="$album_id">
-
-                                <div class="pochette">
+        echo '<div class="item" data-album-id="' . $album_id . '">
+        
+                                        <div class="pochette">
                                         <img src="../images/pochettes/' . htmlspecialchars($pochette) . '" alt="Playlist Image">
                                         </div>
-
-                                <div class="play">
-                                <a href="/SAE-Dev-Web/albums/playal.php?album_id=' . $album_id . '"><span class="fa fa-play"></span></a> <span class="fa fa-play"></span>
-                                </div>
-
-                                <div class="title">
-                                    <h4>' . htmlspecialchars($titre_album) . '</h4>
-                                    <h4>' . htmlspecialchars($artiste_nom) . ' ' . htmlspecialchars($artiste_prenom) . '</h4>
-                                </div> 
-
-                                <div class="img2">
-                                    <a href="/SAE-Dev-Web/albums/supfav.php?album_id=' . $album_id . '"> <img class="like" src="../images/icons/aliki.svg"> </a>
-                                </div>
-                                
-                            </div>';
+        
+                                        <div class="play">
+                                        <a href="../albums/playal.php?album_id=' . $album_id . '" style="text-decoration: none;"><span class="fa fa-play"></span></a>
+                                        </div>
+        
+                                        <div class="title">
+                                            <h3>' . htmlspecialchars($titre_album) . '</h3>
+                                            <h4>' . htmlspecialchars($artiste_nom) . ' ' . htmlspecialchars($artiste_prenom) . '</h4>
+                                        </div> 
+        
+                                        <div class="img2">
+                                            <a href="../albums/ajoutfav.php?album_id=' . $album_id . '"> <img class="like" src="../images/icons/liki.svg"> </a>
+                                        </div>
+                                        
+                                    </div>';
     }
 } else {
     echo '<h2> Aucun album en favoris </h2>';

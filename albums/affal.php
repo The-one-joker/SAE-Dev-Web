@@ -16,20 +16,20 @@
     <main>
         <div class="sidebar">
             <div class="logo">
-                <a href="#">
+                <a href="../accueil/index.php">
                     <img src="../images/avatars/002.png" alt="Logo">
                 </a>
             </div>
             <div class="navigation">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="../accueil/index.php">
                             <span class="fa fa-home"></span>
                             <span>Home</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../albums/affal.php">
                             <span class="icon-wrapper">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-disc" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
@@ -40,7 +40,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../albums/affal.php">
+                        <a href="../Playlists/affichage.php">
                             <span class="fa fas fa-book"></span>
                             <span>Your Playlists</span>
                         </a>
@@ -56,7 +56,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../albums/affal.php">
                             <span class="fa fas fa-heart"></span>
                             <span>Favorite Albums</span>
                         </a>

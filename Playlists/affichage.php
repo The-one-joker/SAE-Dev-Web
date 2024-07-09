@@ -7,30 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playlists</title>
     <link rel="stylesheet" href="ryth.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/23cecef777.js" crossorigin="anonymous"></script>
-    <script src="test.js"></script>
 </head>
 <body>
-    <?php include 'play.php'?>
     <main>
         <div class="sidebar">
             <div class="logo">
-                <a href="#">
+                <a href="../accueil/index.php">
                     <img src="../images/avatars/002.png" alt="Logo">
                 </a>
             </div>
             <div class="navigation">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="../accueil/index.php">
                             <span class="fa fa-home"></span>
                             <span>Home</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../accueil/index.php">
+                        <a href="../albums/affal.php">
                             <span class="icon-wrapper">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-disc" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
@@ -41,9 +40,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../albums/affal.php">
+                        <a href="../Playlists/affichage.php">
                             <span class="fa fas fa-book"></span>
-                            <span>Albums</span>
+                            <span>Your Playlists</span>
                         </a>
                     </li>
                 </ul>
@@ -57,7 +56,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../albums/affal.php">
                             <span class="fa fas fa-heart"></span>
                             <span>Favorite Albums</span>
                         </a>
@@ -86,11 +85,11 @@
 
             <!-- MYYYYYY PLLLLLAAYYYYYLISSSSSTTTTT PARRRRTTTTTTT -->
             <div class="spotify-playlists">
-                <h2>My favorites</h2>
+                <h2>My Playlists</h2>
                 <div id="wrapper">
                     <div id="carousel">
                         <div id="content">
-                            <?php include 'prive.php'?>
+                            <?php include 'recupfav.php'?>
                         </div>
                     </div>
                     <button id="prev">
@@ -108,7 +107,7 @@
                 </div>
             </div>
             <div class="spotify-playlists">
-                <h2>Top Albums </h2>
+                <h2>Top Playlists </h2>
                 <div id="wrapper">
                     <div id="carousel">
                         <div id="content">
@@ -118,12 +117,12 @@
                 </div>
             </div>
             <div class="spotify-playlists">
-                <h2>Albums</h2>
+                <h2>Public Playlists</h2>
                 <div id="wrapper2">
                     <div id="carousel2">
                         <div id="content2">
-                            <?php include 'public.php'?>
-                            <!-- Plus d'éléments peuvent être ajoutés ici -->
+                            <?php include 'recupal.php'?>
+                            
                         </div>
                     </div>
                     <button id="prev2">
@@ -143,6 +142,6 @@
             <hr>
         </div>
     </main>
-    <script src="../gofinal/test.js"></script>
+    <script src="test.js"></script>
 </body>
 </html>
