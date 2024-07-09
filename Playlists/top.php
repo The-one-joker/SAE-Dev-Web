@@ -2,9 +2,9 @@
 include '../PHP/connect.php';
 
 
-$sql = "SELECT playlists.*, utilisateurs.Nom, utilisateurs.Prenom
+$sql = "SELECT playlists.*, Utilisateurs.Nom, Utilisateurs.Prenom
 FROM playlists
-JOIN utilisateurs ON playlists.PLAYLIST_ID = utilisateurs.USER_ID
+JOIN Utilisateurs ON playlists.PLAYLIST_ID = Utilisateurs.USER_ID
 WHERE partage = 1
 LIMIT 5";
 
