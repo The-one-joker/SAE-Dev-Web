@@ -3,10 +3,10 @@ include '../PHP/connect.php';
 
 
 $sql = "SELECT playlists.*, playlists.PLAYLIST_ID, playlists.PLAYLIST_Nom, playlists.Partage, playlists.Pochette_play,
-        utilisateurs.Nom, utilisateurs.Prenom
+        Utilisateurs.Nom, Utilisateurs.Prenom
         FROM playlists
         JOIN a_cree ON playlists.PLAYLIST_ID = a_cree.PLAYLIST_ID
-        JOIN utilisateurs ON a_cree.USER_ID = utilisateurs.USER_ID
+        JOIN Utilisateurs ON a_cree.USER_ID = Utilisateurs.USER_ID
 WHERE playlists.Partage = 0";
 
 
