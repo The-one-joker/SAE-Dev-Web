@@ -110,6 +110,15 @@
                             <div class="App__quick-link-featured-img"></div>
                             <span class="songs"><p class="song">ariste <br> Titre</p></span>
                         </div>
+                        <div class="App__quick-link">
+                            <div class="App__quick-link-featured-img"></div>
+                            <span class="songs"><p class="song">ariste <br> Titre</p></span>
+                        </div>
+                        <div class="App__quick-link">
+                            <div class="App__quick-link-featured-img"></div>
+                            <span class="songs"><p class="song">ariste <br> Titre</p></span>
+                        </div>
+                        
                     </div>
                 </section>
             </div>

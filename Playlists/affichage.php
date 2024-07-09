@@ -89,7 +89,7 @@
                 <div id="wrapper">
                     <div id="carousel">
                         <div id="content">
-                            <?php include 'recupfav.php'?>
+                            <?php include '../Playlists/recupfav.php'?>
                         </div>
                     </div>
                     <button id="prev">
@@ -111,7 +111,7 @@
                 <div id="wrapper">
                     <div id="carousel">
                         <div id="content">
-                            <?php include 'top.php'?>
+                            <?php include '../Playlists/top.php'?>
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                 <div id="wrapper2">
                     <div id="carousel2">
                         <div id="content2">
-                            <?php include 'recupal.php'?>
+                            <?php include '../Playlists/recupal.php'?>
                             
                         </div>
                     </div>
