@@ -7,7 +7,7 @@ $titre_id = isset($_GET['titre_id']) ? intval($_GET['titre_id']) : 0;
 
 // Validate that both IDs are positive integers
 if ($album_id_to_add > 0 && $titre_id > 0) {
-    $sql = "DELETE FROM `CONTIENT` WHERE `TITRE_ID` = $titre_id AND `PLAYLIST_ID` = $album_id_to_add";
+    $sql = "DELETE FROM `contient` WHERE `TITRE_ID` = $titre_id AND `PLAYLIST_ID` = $album_id_to_add";
 
     // Execute the SQL statement
     if ($conn->query($sql) === TRUE) {
