@@ -49,7 +49,6 @@ if ($result2->num_rows > 0) {
         // Afficher chaque titre dans une ligne de tableau HTML
         echo "<tr>";
         echo "<td>" . ($iter) . "</td>";
-        echo "<td>" . $titre_id . "</td>";
         echo "<td>" . $titre_titre . "</td>";
         echo "<td>" . $titre_categorie_id . "</td>"; 
         echo "<td>" . $nom_artiste . " " . $titre_artiste_id . "</td>";   

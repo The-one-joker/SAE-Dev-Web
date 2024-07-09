@@ -94,7 +94,7 @@
                             <tr>
                                 <th>N°</th>
                                 <th>Titres</th>
-                                <th>Albums</th>
+            
                                 <th>Catégorie</th>
                                 <th>Artiste</th>
                                 <th>Année</th>
