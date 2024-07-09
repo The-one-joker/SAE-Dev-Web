@@ -86,15 +86,7 @@
                 <div class="header">
                     <div class="big-square"> <?php include 'pochette.php'; ?> </div>
                     <?php include 'infoal.php'; ?>
-                    <div class="actions">
-                        <button class="action-btn" onclick="">&#10006; Supprimer des titres</button>
-                        <label class="switch">
-                            <input type="checkbox" id="share-checkbox">
-                            <span class="slider"></span>
-                        </label>
-                        <span style="color: white;">Partager la playlist</span>
-                        <button class="action-btn" onclick="">&#10006; Supprimer la playlist</button>
-                    </div>
+                    
                 </div>
                 <div class="table-container">
                     <table>
