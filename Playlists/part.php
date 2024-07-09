@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+include '../PHP/connect.php';
 
 $playlist_id = $album_id_to_add = isset($_GET['album_id']) ? $_GET['album_id'] : '';
 
