@@ -48,7 +48,7 @@ if ($result->num_rows > 0) {
 
     // Afficher les informations dans un bloc HTML
     echo '<div class="title-info">
-            <h1 style="color: white;">' . htmlspecialchars($titre_album_id) . '</h1>
+            <h1 style="color: white;">' . htmlspecialchars($titre_album) . '</h1>
             <div class="info">
                 <p style="color: white;">Titre : ' . htmlspecialchars($nomplay) . '</p>
                 <p style="color: white;">Nombre de titres : ' . htmlspecialchars($nombre_titres) . '</p>
