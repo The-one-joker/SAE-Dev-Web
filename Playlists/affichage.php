@@ -122,7 +122,6 @@
                     <div id="carousel2">
                         <div id="content2">
                             <?php include '../Playlists/recupal.php'?>
-                            
                         </div>
                     </div>
                     <button id="prev2">
@@ -138,6 +137,7 @@
                         </svg>
                     </button>
                 </div>
+            </div>
             </div>
             <hr>
         </div>
